@@ -56,6 +56,9 @@ This wouldn't have been possible without the following people/sources, and thus 
 -   **[Writing a Parser in Java](http://cogitolearning.co.uk/2013/03/writing-a-parser-in-java-introduction/)**  - (Expressions are a pain in the ass!)
 </div>
 <p></p>
+
+---
+
 <dl>
     <div>
         <p align="center">
