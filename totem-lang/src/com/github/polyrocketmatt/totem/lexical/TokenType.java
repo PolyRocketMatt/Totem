@@ -2,6 +2,9 @@ package com.github.polyrocketmatt.totem.lexical;
 
 /**
  * Created by PolyRocketMatt on 28/09/2020.
+ *
+ * Enum that contains all possible types of
+ * tokens recognized by the Tokenizer.
  */
 
 public enum TokenType {
@@ -57,15 +60,11 @@ public enum TokenType {
     VOID,               //  void
     PRINT,              //  print
     REPEAT,             //  repeat
-    SWAP,               //  swap
 
     //Last possible option for a token
     IDENTIFIER,         //  Represents an identifier
     COMMENT,            //  Only used when a line starts with //
 
-    SOF,                //  Represents the start of the file
     EOF;                //  Represents the end of the file
-
-
 
 }

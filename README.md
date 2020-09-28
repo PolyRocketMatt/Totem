@@ -16,6 +16,8 @@ Here is a list of some of the things Totem will be able to do:
  
  - **Object Variables** - These are "final" fields initiated whenever an object is instantiated. Upon creation, it get's default values set which can be accessed throughout the entire class.
  
+ - **Tuple Processing** - An experimental idea that performs a certain function on a given tuple.
+ 
  - **Deep For-Loop** - Creating another layer inside a for loop to allow for multi-variable looping inside one single statement, given by a set of pre-defined behavioral rules.
  
  - **Tilde Operator** - Tilde operator ("~") is capable of rounding off a floating point number towards the specified decimal places.

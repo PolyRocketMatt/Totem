@@ -2,9 +2,12 @@ package com.github.polyrocketmatt.totem;
 
 /**
  * Created by PolyRocketMatt on 28/09/2020.
+ *
+ * Enums that aren't used within the processing
+ * of a source.
  */
 
-public class Utils {
+public class Enums {
 
     public enum Phase {
         PRE_ANALYSIS,

@@ -13,17 +13,30 @@ import java.util.Arrays;
 
 public class Totem {
 
-    public static final String[] options = new String[] { "-el", "-ep", "-etp", "-o" };
+    /**
+     * List of options to give as arguments to the Totem transpiler.
+     *
+     * -el: exclude lexical analysis - This will result in nothing happening
+     * -ep: exclude syntactic analysis - This will only perform lexical analysis
+     * -et: exclude translation - This will exclude the translational step to C-code
+     * -o: print output - This will print out procedural information
+     */
+    public static final String[] options = new String[] { "-el", "-ep", "-et", "-o" };
 
+    /**
+     * Entry point for Totem transpiler.
+     *
+     * @param args the arguments given to the process
+     */
     public static void main(String[] args) {
         try {
             if (args.length == 0)
-                throw new TotemException(Utils.Phase.PRE_ANALYSIS, Utils.ColorProfile.ERROR,
+                throw new TotemException(Enums.Phase.PRE_ANALYSIS, Enums.ColorProfile.ERROR,
                         "No input parameters given!");
 
             String path = args[0];
             StringBuilder sourceBuilder = new StringBuilder();
-            Files.lines(Paths.get(path), StandardCharsets.UTF_8).forEach(sourceBuilder::append);
+            Files.lines(Paths.get(path), StandardCharsets.UTF_8).forEach(line -> sourceBuilder.append(line).append("\n"));
             String source = sourceBuilder.toString();
 
             boolean performLexicalAnalysis = true;
@@ -35,7 +48,7 @@ public class Totem {
                 String option = args[i];
 
                 if (Arrays.stream(options).noneMatch(predefinedOption -> predefinedOption.equalsIgnoreCase(option)))
-                    throw new TotemException(Utils.Phase.PRE_ANALYSIS, Utils.ColorProfile.ERROR,
+                    throw new TotemException(Enums.Phase.PRE_ANALYSIS, Enums.ColorProfile.ERROR,
                             "No parameter \"" + option + "\" exists!");
 
                 switch (option) {
@@ -43,7 +56,7 @@ public class Totem {
                         performLexicalAnalysis = false;
                     case "-ep":
                         performSyntacticAnalysis = false;
-                    case "-etp":
+                    case "-et":
                         performTranslation = false;
                     case "-o":
                         isOut = true;

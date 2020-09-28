@@ -1,6 +1,6 @@
 package com.github.polyrocketmatt.totem.exception;
 
-import com.github.polyrocketmatt.totem.Utils;
+import com.github.polyrocketmatt.totem.Enums;
 
 /**
  * Created by PolyRocketMatt on 28/09/2020.
@@ -8,21 +8,21 @@ import com.github.polyrocketmatt.totem.Utils;
 
 public class TotemException extends Exception {
 
-    private Utils.Phase phase;
-    private Utils.ColorProfile profile;
+    private Enums.Phase phase;
+    private Enums.ColorProfile profile;
     private String error;
 
-    public TotemException(Utils.Phase phase,  Utils.ColorProfile profile, String error) {
+    public TotemException(Enums.Phase phase, Enums.ColorProfile profile, String error) {
         this.phase = phase;
         this.profile = profile;
         this.error = error;
     }
 
-    public Utils.Phase getPhase() {
+    public Enums.Phase getPhase() {
         return phase;
     }
 
-    public Utils.ColorProfile getProfile() {
+    public Enums.ColorProfile getProfile() {
         return profile;
     }
 
