@@ -1,6 +1,6 @@
 <dl>
     <div align="center">
-        <img src="totem.png" alt="Totem Logo">
+        <img src="totem-256.png" alt="Totem Logo">
         <h1>Totem</h1>
     </div>
 </dl>
