@@ -1,5 +1,9 @@
 package com.github.polyrocketmatt.totem;
 
+import com.github.polyrocketmatt.totem.exception.TotemException;
+import com.github.polyrocketmatt.totem.lexical.TokenStream;
+import com.github.polyrocketmatt.totem.lexical.Tokenizer;
+
 /**
  * Created by PolyRocketMatt on 28/09/2020.
  *
@@ -54,8 +58,15 @@ public class TotemProcessor {
     /**
      * Start processing the provided source.
      */
-    public void process() {
+    public void process() throws TotemException {
+        if (performLexicalAnalysis) {
+            Tokenizer tokenizer = new Tokenizer(source);
 
+            tokenizer.process();
+
+            TokenStream stream = tokenizer.getStream();
+            //  System.out.println(stream.toString());
+        }
     }
 
 }

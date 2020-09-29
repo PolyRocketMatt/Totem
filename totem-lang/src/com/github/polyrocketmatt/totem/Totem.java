@@ -21,28 +21,26 @@ public class Totem {
      * -et: exclude translation - This will exclude the translational step to C-code
      * -o: print output - This will print out procedural information
      */
-    public static final String[] options = new String[] { "-el", "-ep", "-et", "-o" };
+    public static final String[] options = new String[] { "-el", "-ep", "-et", "-o", "-s" };
 
     /**
      * Entry point for Totem transpiler.
      *
      * @param args the arguments given to the process
      */
-    public static void main(String[] args) {
+    public Totem(String[] args) {
         try {
             if (args.length == 0)
                 throw new TotemException(Enums.Phase.PRE_ANALYSIS, Enums.ColorProfile.ERROR,
                         "No input parameters given!");
 
             String path = args[0];
-            StringBuilder sourceBuilder = new StringBuilder();
-            Files.lines(Paths.get(path), StandardCharsets.UTF_8).forEach(line -> sourceBuilder.append(line).append("\n"));
-            String source = sourceBuilder.toString();
 
             boolean performLexicalAnalysis = true;
             boolean performSyntacticAnalysis = true;
             boolean performTranslation = true;
             boolean isOut = false;
+            boolean isString = false;
 
             for (int i = 1; i < args.length; i++) {
                 String option = args[i];
@@ -60,10 +58,22 @@ public class Totem {
                         performTranslation = false;
                     case "-o":
                         isOut = true;
+                    case "-s":
+                        isString = true;
                     default:
                         break;
                 }
             }
+
+            String source;
+
+            if (!isString) {
+                StringBuilder sourceBuilder = new StringBuilder();
+                Files.lines(Paths.get(path), StandardCharsets.UTF_8).forEach(line -> sourceBuilder.append(line).append("\n"));
+
+                source = sourceBuilder.toString();
+            } else
+                source = path;
 
             TotemProcessor processor = new TotemProcessor(source);
 

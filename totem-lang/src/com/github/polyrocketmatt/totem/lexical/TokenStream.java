@@ -14,14 +14,14 @@ public class TokenStream {
     private LinkedList<Token> stream;
 
     /**
-     * Initialize a new TokenStream.
+     * Initialize a new stream of tokens.
      */
     public TokenStream() {
         this.stream = new LinkedList<>();
     }
 
     /**
-     * Get the TokenStream.
+     * Get the stream of tokens.
      *
      * @return the list of tokens
      */
@@ -38,4 +38,14 @@ public class TokenStream {
         stream.add(token);
     }
 
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder().append("\n");
+
+        for (Token token : stream)
+            str.append(token.toString()).append("\n");
+        str.append("\n");
+
+        return str.toString();
+    }
 }
