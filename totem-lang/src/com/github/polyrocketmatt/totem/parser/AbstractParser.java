@@ -1,5 +1,6 @@
 package com.github.polyrocketmatt.totem.parser;
 
+import com.github.polyrocketmatt.totem.exception.ParserException;
 import com.github.polyrocketmatt.totem.lexical.TokenStream;
 import com.github.polyrocketmatt.totem.node.Node;
 
@@ -40,7 +41,7 @@ public abstract class AbstractParser<T extends Node> {
      * @param stream the stream to be parsed
      * @return a node of type T based on the parsed stream
      */
-    public abstract T parse(TokenStream stream);
+    public abstract T parse(TokenStream stream) throws ParserException;
 
     /**
      * Check if the parser accepts the coming tokens of the stream.

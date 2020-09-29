@@ -9,6 +9,9 @@ package com.github.polyrocketmatt.totem;
 
 public class Enums {
 
+    /**
+     * Represents a phase of the transpilation process.
+     */
     public enum Phase {
         PRE_ANALYSIS,
         LEXICAL_ANALYSIS,
@@ -17,6 +20,9 @@ public class Enums {
         RUNTIME
     }
 
+    /**
+     * Represents a highlight color of the console.
+     */
     public enum ColorProfile {
         INFO("\u001B[32m"),
         WARNING("\u001B[33m"),

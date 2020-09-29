@@ -52,8 +52,10 @@ public class TokenStream {
     public void close() {
         Stack<Token> tmp = new Stack<>();
 
-        while (!stream.isEmpty())
-            tmp.add(stream.pop());
+        while (!stream.isEmpty()) {
+            tmp.add(stream.getLast());
+            stream.removeLast();
+        }
 
         this.stream = new LinkedList<>(tmp);
     }
@@ -64,7 +66,7 @@ public class TokenStream {
      * @return the current token in the stream
      */
     public Token pop() {
-        return stream.pop();
+        return stream.removeLast();
     }
 
     /**
@@ -83,8 +85,10 @@ public class TokenStream {
      * @param n the number of tokens to skip
      */
     public void skip(int n) {
-        while (n > 0 && stream.size() > 0)
-            stream.pop();
+        while (n > 0 && stream.size() > 0) {
+            stream.removeLast();
+            n--;
+        }
     }
 
     /**
@@ -110,6 +114,8 @@ public class TokenStream {
         for (int i = 0; i <= offset; i++) {
             local.add(pop());
         }
+
+        local.close();
 
         return new TokenStream[] { local, this };
     }

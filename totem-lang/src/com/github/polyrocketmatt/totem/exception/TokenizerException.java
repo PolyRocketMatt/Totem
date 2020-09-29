@@ -6,6 +6,8 @@ import java.text.MessageFormat;
 
 /**
  * Created by PolyRocketMatt on 29/09/2020.
+ *
+ * A TokenizerException can be thrown during lexical analysis.
  */
 
 public class TokenizerException extends TotemException {

@@ -4,6 +4,9 @@ import com.github.polyrocketmatt.totem.Enums;
 
 /**
  * Created by PolyRocketMatt on 29/09/2020.
+ *
+ * A ParameterException can be thrown whenever an illegal
+ * parameter is being created.
  */
 
 public class ParameterException extends TotemException {

@@ -5,6 +5,10 @@ import com.github.polyrocketmatt.totem.exception.TotemException;
 import com.github.polyrocketmatt.totem.lexical.Token;
 import com.github.polyrocketmatt.totem.lexical.TokenStream;
 import com.github.polyrocketmatt.totem.lexical.TotemTokenizer;
+import com.github.polyrocketmatt.totem.node.Node;
+import com.github.polyrocketmatt.totem.parser.TotemParser;
+
+import java.util.List;
 
 /**
  * Created by PolyRocketMatt on 28/09/2020.
@@ -61,12 +65,14 @@ public class TotemProcessor {
      * Start processing the provided source.
      */
     public void process() throws TotemException {
+        TokenStream stream = null;
+
         if (performLexicalAnalysis) {
             TotemTokenizer tokenizer = new TotemTokenizer(source);
 
             tokenizer.process();
-
-            TokenStream stream = tokenizer.getStream();
+            stream = tokenizer.getStream();
+            stream.close();
 
             //  Check braces
             int count = 0;
@@ -85,6 +91,19 @@ public class TotemProcessor {
 
             if (count != 0)
                 throw new ParserException("Unexpected EOF, expected \"}\"");
+        }
+
+        if (performSyntacticAnalysis) {
+            if (stream == null)
+                throw new ParserException("Stream of tokens cannot be null!");
+
+            TotemParser parser = new TotemParser(stream);
+
+            parser.process();
+
+            List<Node> roots = parser.getRoots();
+
+            System.out.println(roots.size());
         }
     }
 
