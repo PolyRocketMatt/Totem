@@ -70,7 +70,7 @@ This wouldn't have been possible without the following people/sources, and thus 
             <small>Copyright © 2020 by Matthias Kovacic</small>
         </p>
         <p align="center">
-            <small>Icons provided by <a href="https://www.flaticon.com/authors/smashicons">Smashicons</a> from <a href="https://www.flaticon.com/">Flaticon</a></small>
+            <small>Icons provided by <a href="https://www.flaticon.com/authors/freepik">Freepik</a> from <a href="https://www.flaticon.com/">Flaticon</a></small>
         </p>
     </div>
 </dl>
