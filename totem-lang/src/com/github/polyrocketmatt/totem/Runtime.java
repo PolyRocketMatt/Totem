@@ -6,7 +6,7 @@ package com.github.polyrocketmatt.totem;
 
 public class Runtime {
 
-    private static final String source = "def MyObject(int param1, string param2) {}";
+    private static final String source = "def MyObject(int param1, string param2) {} {{{{}}}}";
 
     public static void main(String[] args) {
         new Totem(new String[] { source, "-o", "-s" });

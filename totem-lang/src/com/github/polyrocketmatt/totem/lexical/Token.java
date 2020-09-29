@@ -70,7 +70,7 @@ public class Token {
      *
      * @return the column
      */
-    public int getCol() {
+    public int getColumn() {
         return col;
     }
 

@@ -22,6 +22,13 @@ public class TokenStream {
     }
 
     /**
+     * Initialize a new stream of tokens with the given list of tokens.
+     */
+    public TokenStream(LinkedList<Token> stream) {
+        this.stream = stream;
+    }
+
+    /**
      * Get the stream of tokens.
      *
      * @return the list of tokens
@@ -88,6 +95,23 @@ public class TokenStream {
      */
     public Token peek(int offset) {
         return stream.get(stream.size() - (offset + 1));
+    }
+
+    /**
+     * Split the stream of tokens into two separate streams.
+     * The token at the offset-location is included within the first stream.
+     *
+     * @param offset the offset where the stream should be split
+     * @return an array of streams containing 2 streams
+     */
+    public TokenStream[] split(int offset) {
+        TokenStream local = new TokenStream();
+
+        for (int i = 0; i <= offset; i++) {
+            local.add(pop());
+        }
+
+        return new TokenStream[] { local, this };
     }
 
     @Override

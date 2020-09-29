@@ -1,8 +1,10 @@
 package com.github.polyrocketmatt.totem;
 
+import com.github.polyrocketmatt.totem.exception.ParserException;
 import com.github.polyrocketmatt.totem.exception.TotemException;
+import com.github.polyrocketmatt.totem.lexical.Token;
 import com.github.polyrocketmatt.totem.lexical.TokenStream;
-import com.github.polyrocketmatt.totem.lexical.Tokenizer;
+import com.github.polyrocketmatt.totem.lexical.TotemTokenizer;
 
 /**
  * Created by PolyRocketMatt on 28/09/2020.
@@ -60,12 +62,29 @@ public class TotemProcessor {
      */
     public void process() throws TotemException {
         if (performLexicalAnalysis) {
-            Tokenizer tokenizer = new Tokenizer(source);
+            TotemTokenizer tokenizer = new TotemTokenizer(source);
 
             tokenizer.process();
 
             TokenStream stream = tokenizer.getStream();
-            //  System.out.println(stream.toString());
+
+            //  Check braces
+            int count = 0;
+            for (Token token : stream.getStream()) {
+                switch (token.getType()) {
+                    case OBRACE:
+                        count++;
+
+                        break;
+                    case CBRACE:
+                        count--;
+
+                        break;
+                }
+            }
+
+            if (count != 0)
+                throw new ParserException("Unexpected EOF, expected \"}\"");
         }
     }
 

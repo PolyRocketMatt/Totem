@@ -1,5 +1,6 @@
 package com.github.polyrocketmatt.totem.lexical;
 
+import com.github.polyrocketmatt.totem.TotemPhase;
 import com.github.polyrocketmatt.totem.exception.TokenizerException;
 import com.github.polyrocketmatt.totem.utils.Value;
 
@@ -17,7 +18,7 @@ import java.util.regex.Pattern;
  * further into even smaller chunks (e.g. if-statements)
  */
 
-public class Tokenizer {
+public class TotemTokenizer implements TotemPhase {
 
     /** The source that has to be tokenized */
     private final String source;
@@ -28,7 +29,7 @@ public class Tokenizer {
     /** The final stream of tokens */
     private TokenStream stream;
 
-    public Tokenizer(String source) {
+    public TotemTokenizer(String source) {
         this.source = source;
         this.tokenData = new LinkedList<>();
 
@@ -108,6 +109,7 @@ public class Tokenizer {
      *
      * @throws TokenizerException if an unrecognized token has been found
      */
+    @Override
     public void process() throws TokenizerException {
         this.stream = new TokenStream();
 
