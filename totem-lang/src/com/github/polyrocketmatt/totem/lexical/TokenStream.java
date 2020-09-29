@@ -1,6 +1,7 @@
 package com.github.polyrocketmatt.totem.lexical;
 
 import java.util.LinkedList;
+import java.util.Stack;
 
 /**
  * Created by PolyRocketMatt on 29/09/2020.
@@ -36,6 +37,57 @@ public class TokenStream {
      */
     public void add(Token token) {
         stream.add(token);
+    }
+
+    /**
+     * Reverses the whole stack of tokens in preparation of reading.
+     */
+    public void close() {
+        Stack<Token> tmp = new Stack<>();
+
+        while (!stream.isEmpty())
+            tmp.add(stream.pop());
+
+        this.stream = new LinkedList<>(tmp);
+    }
+
+    /**
+     * Pop the current token in the stream.
+     *
+     * @return the current token in the stream
+     */
+    public Token pop() {
+        return stream.pop();
+    }
+
+    /**
+     * Read the current token in the stream but
+     * don't remove it from the stream.
+     *
+     * @return the current token in the stream.
+     */
+    public Token read() {
+        return stream.getLast();
+    }
+
+    /**
+     * Skip n tokens in the stream.
+     *
+     * @param n the number of tokens to skip
+     */
+    public void skip(int n) {
+        while (n > 0 && stream.size() > 0)
+            stream.pop();
+    }
+
+    /**
+     * Read the n-th token from the current queued token.
+     *
+     * @param offset the offset to read the token from
+     * @return the offset token
+     */
+    public Token peek(int offset) {
+        return stream.get(stream.size() - (offset + 1));
     }
 
     @Override
