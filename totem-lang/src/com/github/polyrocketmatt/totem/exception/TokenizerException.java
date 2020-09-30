@@ -12,8 +12,8 @@ import java.text.MessageFormat;
 
 public class TokenizerException extends TotemException {
 
-    public TokenizerException(String error, int row, int col) {
-        super(Enums.Phase.LEXICAL_ANALYSIS, Enums.ColorProfile.ERROR, MessageFormat.format(error, row, col));
+    public TokenizerException(String error, int row, int col, String line) {
+        super(Enums.Phase.LEXICAL_ANALYSIS, Enums.ColorProfile.ERROR, MessageFormat.format(error, row, col, line));
     }
 
 }

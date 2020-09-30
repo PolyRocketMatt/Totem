@@ -2,10 +2,10 @@ package com.github.polyrocketmatt.totem.parser;
 
 import com.github.polyrocketmatt.totem.TotemPhase;
 import com.github.polyrocketmatt.totem.exception.ParserException;
-import com.github.polyrocketmatt.totem.exception.TotemException;
 import com.github.polyrocketmatt.totem.lexical.Token;
 import com.github.polyrocketmatt.totem.lexical.TokenStream;
 import com.github.polyrocketmatt.totem.lexical.TokenType;
+import com.github.polyrocketmatt.totem.node.MethodNode;
 import com.github.polyrocketmatt.totem.node.Node;
 import com.github.polyrocketmatt.totem.node.ObjectNode;
 
@@ -31,12 +31,17 @@ public class TotemParser implements TotemPhase {
     /** The roots of the source AST (These should always be object-nodes) */
     private List<Node> roots;
 
+    /** The current super-node */
+    private Node superNode;
+
     public TotemParser(TokenStream stream) {
         this.stream = stream;
         this.parsers = new AbstractParser[] {
-            new ObjectParser(this)
+                new ObjectParser(this),
+                new MethodParser(this),
         };
         this.roots = new ArrayList<>();
+        this.superNode = null;
     }
 
     /**
@@ -50,15 +55,21 @@ public class TotemParser implements TotemPhase {
     }
 
     /**
+     * Get the current super-node.
+     *
+     * @return the super-node
+     */
+    public Node getSuperNode() {
+        return superNode;
+    }
+
+    /**
      * Parse the given stream of tokens into an abstract syntax tree.
      *
      * @throws ParserException if an exception occurred during parsing
      */
     @Override
     public void process() throws ParserException {
-        //  Create a super-node object
-        Node superNode = null;
-
         //  Read the current token
         Token token = stream.read();
 
@@ -72,9 +83,16 @@ public class TotemParser implements TotemPhase {
             if (token.getType().equals(TokenType.OBRACE)) {
                 stream.pop();
                 level++;
+                token = stream.read();
+
+                continue;
             } else if (token.getType().equals(TokenType.CBRACE)) {
                 stream.pop();
                 level--;
+                token = stream.read();
+                superNode = superNode.getSuperNode();
+
+                continue;
             }
 
             //  Try every parser on the current stream of tokens
@@ -106,7 +124,7 @@ public class TotemParser implements TotemPhase {
                             objectParserStreamIndex++;
                         }
 
-                        //  Remove the OBrace token since the parser doesn't need it
+                        //  Remove the { token since the parser doesn't need it
                         TokenStream[] objectStreams = stream.split(objectParserStreamIndex - 1);
 
                         //  TODO: Is this allowed?
@@ -126,12 +144,56 @@ public class TotemParser implements TotemPhase {
                             throw new ParserException("Code cannot exist outside of objects!");
 
                         //  TODO: Don't make object inside other objects (yet, planned feature)
+                        if (parser instanceof MethodParser) {
+                            int parenthesisCount = 1;
+                            int methodParserStreamReturnIndex = 1;
+
+                            while (parenthesisCount != 0) {
+                                Token offsetToken = stream.peek(methodParserStreamReturnIndex);
+
+                                if (offsetToken.getType().equals(TokenType.OPAREN))
+                                    parenthesisCount++;
+                                else if (offsetToken.getType().equals(TokenType.CPAREN))
+                                    parenthesisCount--;
+
+                                methodParserStreamReturnIndex++;
+                            }
+
+                            methodParserStreamReturnIndex += 2;
+                            parenthesisCount = 1;
+
+                            while (parenthesisCount != 0) {
+                                Token offsetToken = stream.peek(methodParserStreamReturnIndex);
+
+                                if (offsetToken.getType().equals(TokenType.OPAREN))
+                                    parenthesisCount++;
+                                else if (offsetToken.getType().equals(TokenType.CPAREN))
+                                    parenthesisCount--;
+
+                                methodParserStreamReturnIndex++;
+                            }
+
+                            //  Remove the { token since the parser doesn't need it
+                            TokenStream[] methodStreams = stream.split(methodParserStreamReturnIndex - 1);
+
+                            //  TODO: Is this allowed?
+                            this.stream = methodStreams[1];
+
+                            MethodNode methodNode = ((MethodParser) parser).parse(methodStreams[0]);
+
+                            superNode.add(methodNode);
+                            superNode = methodNode;
+                        }
                     }
+
+                    break;
                 }
 
             //  Read the next token in the stream
             token = stream.read();
         }
+
+        System.out.println("");
 
         //  Throw an exception if a leveling issue should have occurred
         //  This shouldn't be possible since the lexical analysis took care

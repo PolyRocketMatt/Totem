@@ -7,6 +7,7 @@ import com.github.polyrocketmatt.totem.lexical.TokenStream;
 import com.github.polyrocketmatt.totem.lexical.TotemTokenizer;
 import com.github.polyrocketmatt.totem.node.Node;
 import com.github.polyrocketmatt.totem.parser.TotemParser;
+import com.github.polyrocketmatt.totem.translator.TotemTranslator;
 
 import java.util.List;
 
@@ -93,6 +94,8 @@ public class TotemProcessor {
                 throw new ParserException("Unexpected EOF, expected \"}\"");
         }
 
+        List<Node> roots = null;
+
         if (performSyntacticAnalysis) {
             if (stream == null)
                 throw new ParserException("Stream of tokens cannot be null!");
@@ -100,10 +103,13 @@ public class TotemProcessor {
             TotemParser parser = new TotemParser(stream);
 
             parser.process();
+            roots = parser.getRoots();
+        }
 
-            List<Node> roots = parser.getRoots();
+        if (performTranslation) {
+            TotemTranslator translator = new TotemTranslator(roots);
 
-            System.out.println(roots.size());
+            translator.process();
         }
     }
 

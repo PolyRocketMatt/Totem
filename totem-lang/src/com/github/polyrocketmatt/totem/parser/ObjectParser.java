@@ -26,9 +26,10 @@ public class ObjectParser extends AbstractParser<ObjectNode> {
 
     @Override
     public ObjectNode parse(TokenStream stream) throws ParserException {
+        //  Skip "def"
         stream.skip(1);
 
-        Token name = stream.pop();
+        Token name = stream.read();
 
         if (!name.getType().equals(TokenType.IDENTIFIER))
             throw new ParserException(MessageFormat.format(
@@ -38,7 +39,8 @@ public class ObjectParser extends AbstractParser<ObjectNode> {
                     name.getValue().getValue().toString()
             ));
 
-        stream.skip(1);
+        //  Skip identifier and (
+        stream.skip(2);
 
         List<Parameter> parameters = new ArrayList<>();
 

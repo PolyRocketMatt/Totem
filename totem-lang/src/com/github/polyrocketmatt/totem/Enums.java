@@ -16,7 +16,7 @@ public class Enums {
         PRE_ANALYSIS,
         LEXICAL_ANALYSIS,
         SYNTACTIC_ANALYSIS,
-        SEMANTIC_ANALYSIS,
+        TRANSLATION,
         RUNTIME
     }
 

@@ -52,14 +52,24 @@ public class Totem {
                 switch (option) {
                     case "-el":
                         performLexicalAnalysis = false;
+
+                        break;
                     case "-ep":
                         performSyntacticAnalysis = false;
+
+                        break;
                     case "-et":
                         performTranslation = false;
+
+                        break;
                     case "-o":
                         isOut = true;
+
+                        break;
                     case "-s":
                         isString = true;
+
+                        break;
                     default:
                         break;
                 }

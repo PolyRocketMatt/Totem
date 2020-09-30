@@ -156,7 +156,7 @@ public class TotemTokenizer implements TotemPhase {
                     }
 
                     if (!match) {
-                        throw new TokenizerException("Bad character input at ({0},{1})!", lineIndex, remaining);
+                        throw new TokenizerException("Bad character input at ({0},{1}): {2}!", lineIndex, remaining, line);
                     }
                 }
             }
