@@ -6,7 +6,7 @@ package com.github.polyrocketmatt.totem;
 
 public class Runtime {
 
-    private static final String source = "C:\\Users\\" + System.getProperty("user.name") + "\\Totem\\test.totem";
+    private static final String source = "C:\\Users\\" + System.getProperty("user.name") + "\\Totem\\test.ttm";
 
     public static void main(String[] args) {
         new Totem(new String[] { source, "-o" });

@@ -26,6 +26,8 @@ public class TypeResolver {
                 return "int";
             case STRING:
                 return "char";
+            case VOID:
+                return "void";
         }
 
         return "";

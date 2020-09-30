@@ -9,6 +9,7 @@ import com.github.polyrocketmatt.totem.node.ObjectNode;
 import com.github.polyrocketmatt.totem.utils.IdentityResolver;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
@@ -55,9 +56,25 @@ public class TotemTranslator implements TotemPhase {
      */
     @Override
     public void process() throws TotemException {
-        IdentityResolver resolver = new IdentityResolver(7);
+        try {
+            IdentityResolver resolver = new IdentityResolver(7);
 
-        for (Node root : roots)
-            new ObjectTranslator((ObjectNode) root, resolver).translate(object);
+            for (Node root : roots) {
+                ObjectTranslator objectTranslator = new ObjectTranslator((ObjectNode) root, resolver);
+
+                FileWriter writer = new FileWriter(object, true);
+                String source = objectTranslator.translate();
+
+                //   Write
+                writer.write(source);
+
+                //   Close writer safely
+                writer.close();
+            }
+        } catch (IOException ex) {
+            //TODO: Proper error reporting using TotemException
+
+            ex.printStackTrace();
+        }
     }
 }
