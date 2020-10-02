@@ -18,6 +18,7 @@ public class TypeUtils {
     /** All return-types in Totem represented as token-types */
     private static final TokenType[] returnTypes = new TokenType[] { TokenType.BOOL, TokenType.FLOAT, TokenType.INT, TokenType.STRING, TokenType.VOID };
 
+    /** All the literals in Totem represented as token-types */
     private static final TokenType[] literals = new TokenType[] { TokenType.BOOL_LITERAL, TokenType.FLOAT_LITERAL, TokenType.INT_LITERAL, TokenType.STRING_LITERAL };
 
     /**

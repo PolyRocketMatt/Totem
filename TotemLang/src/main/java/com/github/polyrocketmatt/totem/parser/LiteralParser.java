@@ -8,6 +8,8 @@ import com.github.polyrocketmatt.totem.utils.TypeUtils;
 
 /**
  * Created by PolyRocketMatt on 02/10/2020.
+ *
+ * A parser to parse literals.
  */
 
 public class LiteralParser extends AbstractParser<LiteralExpression> {
