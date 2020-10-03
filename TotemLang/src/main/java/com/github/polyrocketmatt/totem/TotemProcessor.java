@@ -1,8 +1,10 @@
 package com.github.polyrocketmatt.totem;
 
 import com.github.polyrocketmatt.totem.exception.ParserException;
+import com.github.polyrocketmatt.totem.exception.TokenizerException;
 import com.github.polyrocketmatt.totem.exception.TotemException;
 import com.github.polyrocketmatt.totem.exception.InterpreterException;
+import com.github.polyrocketmatt.totem.interpreter.TotemInterpreter;
 import com.github.polyrocketmatt.totem.lexical.Token;
 import com.github.polyrocketmatt.totem.lexical.TokenStream;
 import com.github.polyrocketmatt.totem.lexical.TokenType;
@@ -69,10 +71,12 @@ public class TotemProcessor {
         TokenStream stream = null;
 
         if (performLexicalAnalysis) {
-            TotemTokenizer tokenizer = new TotemTokenizer(source);
+            try {
+                TotemTokenizer tokenizer = new TotemTokenizer(source);
 
-            tokenizer.process();
-            stream = tokenizer.getStream();
+                tokenizer.process();
+                stream = tokenizer.getStream();
+            } catch (TokenizerException ex) { ex.printStackTrace(); }
 
             //  Check braces
             int count = 0;
@@ -92,8 +96,10 @@ public class TotemProcessor {
             if (count != 0)
                 throw new ParserException("Unexpected EOF, expected \"}\"");
 
-            System.out.println(stream.toString());
-            System.out.println("\n\n");
+            if (isOut) {
+                System.out.println(stream.toString());
+                System.out.println("\n\n");
+            }
         }
 
         ParentNode parent = null;
@@ -102,9 +108,26 @@ public class TotemProcessor {
             if (stream == null)
                 throw new ParserException("Stream of tokens cannot be null!");
 
-            TotemParser parser = new TotemParser(stream);
+            try {
+                TotemParser parser = new TotemParser(stream);
 
-            parser.parse();
+                parser.process();
+                parent = parser.getParentNode();
+            } catch (ParserException ex) { ex.printStackTrace(); }
+
+            if (isOut)
+                System.out.println(parent.string(""));
+        }
+
+        if (performTranslation) {
+            if (parent == null)
+                throw new InterpreterException("Cannot have an empty AST");
+
+            try {
+                TotemInterpreter interpreter = new TotemInterpreter(parent);
+
+                interpreter.process();
+            } catch (InterpreterException ex) { ex.printStackTrace(); }
         }
     }
 

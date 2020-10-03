@@ -1,5 +1,6 @@
 package com.github.polyrocketmatt.totem.utils;
 
+import com.github.polyrocketmatt.totem.exception.InterpreterException;
 import com.github.polyrocketmatt.totem.lexical.TokenType;
 
 import java.util.Arrays;
@@ -67,5 +68,47 @@ public class TypeUtils {
      * @return true if the token-type is a comparable in Totem
      */
     public static boolean isComparable(TokenType type) { return Arrays.asList(comparables).contains(type); }
+
+    /**
+     * Find the primitive type of a literal.
+     *
+     * @param type the literal
+     * @return the primitive type if found
+     */
+    public static TokenType getTypeOfLiteral(TokenType type) {
+        switch (type) {
+            case BOOL_LITERAL:
+                return TokenType.BOOL;
+            case FLOAT_LITERAL:
+                return TokenType.FLOAT;
+            case INT_LITERAL:
+                return TokenType.INT;
+            case STRING_LITERAL:
+                return TokenType.STRING;
+        }
+
+        return type;
+    }
+
+    /**
+     * Check if two types are compatible for operations.
+     *
+     * @param left the left type
+     * @param right the right type
+     * @return true if left and right are compatible
+     */
+    public static boolean isCompatibleForComputation(TokenType left, TokenType right) {
+        switch (left) {
+            case BOOL_LITERAL:
+                return right == TokenType.BOOL_LITERAL;
+            case FLOAT_LITERAL:
+            case INT_LITERAL:
+                return right == TokenType.INT_LITERAL || right == TokenType.FLOAT_LITERAL;
+            case STRING_LITERAL:
+                return right == TokenType.STRING_LITERAL;
+        }
+
+        return false;
+    }
 
 }

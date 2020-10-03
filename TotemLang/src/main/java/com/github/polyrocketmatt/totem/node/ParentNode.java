@@ -1,5 +1,8 @@
 package com.github.polyrocketmatt.totem.node;
 
+import com.github.polyrocketmatt.totem.exception.InterpreterException;
+import com.github.polyrocketmatt.totem.interpreter.TotemInterpreter;
+
 import java.util.LinkedList;
 
 /**
@@ -12,6 +15,12 @@ public class ParentNode extends Node {
 
     public ParentNode() {
         super(null, new LinkedList<>());
+    }
+
+    @Override
+    public void visit(TotemInterpreter interpreter) throws InterpreterException {
+        for (Node subNode : getSubNodes())
+            subNode.visit(interpreter);
     }
 
     @Override

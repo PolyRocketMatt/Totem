@@ -1,6 +1,8 @@
 package com.github.polyrocketmatt.totem.parser;
 
+import com.github.polyrocketmatt.totem.TotemPhase;
 import com.github.polyrocketmatt.totem.exception.ParserException;
+import com.github.polyrocketmatt.totem.exception.TotemException;
 import com.github.polyrocketmatt.totem.lexical.Token;
 import com.github.polyrocketmatt.totem.lexical.TokenStream;
 import com.github.polyrocketmatt.totem.lexical.TokenType;
@@ -14,9 +16,11 @@ import java.text.MessageFormat;
 
 /**
  * Created by PolyRocketMatt on 01/10/2020.
+ *
+ * The parser to generate an AST.
  */
 
-public class TotemParser {
+public class TotemParser implements TotemPhase {
 
     private TokenStream stream;
     private ParentNode parentNode;
@@ -28,13 +32,20 @@ public class TotemParser {
         this.superNode = parentNode;
     }
 
-    public void parse() {
+    public ParentNode getParentNode() {
+        return parentNode;
+    }
+
+    @Override
+    public void process() throws TotemException {
+        parse();
+    }
+
+    private void parse() {
         try {
             ExpressionNode expressionNode = parseExpression();
 
             superNode.add(expressionNode);
-
-            System.out.println(superNode.string(""));
         } catch (ParserException ex) {
             //  TODO: Add error to error handler
 
@@ -62,7 +73,7 @@ public class TotemParser {
 
     private ExpressionNode parseComparison() throws ParserException {
         ExpressionNode expr = parseTerm();
-        Token operator = stream.match(TokenType.GREATER_EQUALS, TokenType.LESS_EQUALS, TokenType.GREATER_THAN, TokenType.LESS_THAN);
+        Token operator = stream.match(TokenType.GREATER_EQUALS, TokenType.LESS_EQUALS, TokenType.GREATER_THAN, TokenType.LESS_THAN, TokenType.DOUBLE_AMPERSAND, TokenType.DOUBLE_PIPE);
 
         while (operator != null) {
             ExpressionNode right = parseTerm();

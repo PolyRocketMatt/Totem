@@ -1,9 +1,9 @@
 package com.github.polyrocketmatt.totem.node.expressions;
 
 import com.github.polyrocketmatt.totem.exception.InterpreterException;
+import com.github.polyrocketmatt.totem.interpreter.TotemInterpreter;
 import com.github.polyrocketmatt.totem.node.ExpressionNode;
 import com.github.polyrocketmatt.totem.node.Node;
-import com.github.polyrocketmatt.totem.utils.RepresentableValue;
 
 /**
  * Created by PolyRocketMatt on 03/10/2020.
@@ -20,8 +20,8 @@ public class ParenthesizedExpressionNode extends ExpressionNode {
     }
 
     @Override
-    public RepresentableValue visit() throws InterpreterException {
-        return null;
+    public void visit(TotemInterpreter interpreter) throws InterpreterException {
+        expression.visit(interpreter);
     }
 
     @Override

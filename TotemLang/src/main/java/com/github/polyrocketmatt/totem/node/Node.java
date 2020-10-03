@@ -1,5 +1,8 @@
 package com.github.polyrocketmatt.totem.node;
 
+import com.github.polyrocketmatt.totem.exception.InterpreterException;
+import com.github.polyrocketmatt.totem.interpreter.TotemInterpreter;
+
 import java.util.LinkedList;
 
 /**
@@ -60,6 +63,20 @@ public abstract class Node {
         }
     }
 
+    /**
+     * Routine when a node is visited.
+     *
+     * @param interpreter the interpreter of the source
+     */
+    public abstract void visit(TotemInterpreter interpreter) throws InterpreterException;
+
+    /**
+     * Represent a node as a string.
+     * TODO: This is debug only!
+     *
+     * @param indent the indentation used for representing the AST
+     * @return the string representation of the node
+     */
     public abstract String string(String indent);
 
 }

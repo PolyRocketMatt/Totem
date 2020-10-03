@@ -193,10 +193,14 @@ public class TotemTokenizer implements TotemPhase {
                 case PLUS:
                     switch (singleStream.peek(1).getType()) {
                         case PLUS:
-                            stream.add(new Token(new Value<>("++", TokenType.PRE_POST_INCREMENT), TokenType.PRE_POST_INCREMENT, token.getRow(), token.getColumn()));
-                            singleStream.skip(2);
-
-                            break;
+                            //  TODO: Change this to "Expressionable" of some type
+                            if (stream.peek(2).getType() != null && (stream.read().getType() == TokenType.IDENTIFIER || singleStream.peek(2).getType() == TokenType.IDENTIFIER)) {
+                                stream.add(new Token(new Value<>("++", TokenType.PRE_POST_INCREMENT), TokenType.PRE_POST_INCREMENT, token.getRow(), token.getColumn()));
+                                singleStream.skip(2);
+                            } else {
+                                stream.add(token);
+                                singleStream.skip(1);
+                            }
                         case EQUAL:
                             stream.add(new Token(new Value<>("+=", TokenType.PLUS_EQUALS), TokenType.PLUS_EQUALS, token.getRow(), token.getColumn()));
                             singleStream.skip(2);
@@ -213,8 +217,14 @@ public class TotemTokenizer implements TotemPhase {
                 case MINUS:
                     switch (singleStream.peek(1).getType()) {
                         case MINUS:
-                            stream.add(new Token(new Value<>("--", TokenType.PRE_POST_DECREMENT), TokenType.PRE_POST_DECREMENT, token.getRow(), token.getColumn()));
-                            singleStream.skip(2);
+                            //  TODO: Change this to "Expressionable" of some type
+                            if (stream.peek(2) != null && (stream.read().getType() == TokenType.IDENTIFIER || singleStream.peek(2).getType() == TokenType.IDENTIFIER)) {
+                                stream.add(new Token(new Value<>("--", TokenType.PRE_POST_DECREMENT), TokenType.PRE_POST_DECREMENT, token.getRow(), token.getColumn()));
+                                singleStream.skip(2);
+                            } else {
+                                stream.add(token);
+                                singleStream.skip(1);
+                            }
 
                             break;
                         case EQUAL:

@@ -8,7 +8,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/TotemProcessor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/exception/TotemException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/interpreter/TotemInterpreter.java">
           <value>
             <set />
           </value>
@@ -24,6 +34,61 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/lexical/TotemTokenizer.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/ExpressionNode.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/Node.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/ParentNode.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/expressions/BinaryExpressionNode.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/expressions/ComparisonExpressionNode.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/expressions/LiteralExpressionNode.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/expressions/ParenthesizedExpressionNode.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/expressions/UnaryExpressionNode.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/TotemParser.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/utils/RepresentableValue.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/utils/TypeUtils.java">
           <value>
             <set />
           </value>

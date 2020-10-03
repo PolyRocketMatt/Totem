@@ -1,6 +1,7 @@
 package com.github.polyrocketmatt.totem.node.expressions;
 
 import com.github.polyrocketmatt.totem.exception.InterpreterException;
+import com.github.polyrocketmatt.totem.interpreter.TotemInterpreter;
 import com.github.polyrocketmatt.totem.node.ExpressionNode;
 import com.github.polyrocketmatt.totem.node.Node;
 import com.github.polyrocketmatt.totem.utils.RepresentableValue;
@@ -8,6 +9,8 @@ import com.github.polyrocketmatt.totem.utils.Value;
 
 /**
  * Created by PolyRocketMatt on 03/10/2020.
+ *
+ * Expression that represents a literal.
  */
 
 public class LiteralExpressionNode extends ExpressionNode {
@@ -21,8 +24,8 @@ public class LiteralExpressionNode extends ExpressionNode {
     }
 
     @Override
-    public RepresentableValue visit() throws InterpreterException {
-        return null;
+    public void visit(TotemInterpreter interpreter) throws InterpreterException {
+        interpreter.getComputationalResults().push(new RepresentableValue(literal));
     }
 
     @Override
