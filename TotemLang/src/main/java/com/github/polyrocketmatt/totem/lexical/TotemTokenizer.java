@@ -33,10 +33,10 @@ public class TotemTokenizer implements TotemPhase {
         this.source = source;
         this.tokenData = new LinkedList<>();
 
-        add(TokenType.FLOAT_LITERAL, "\\d+.\\d+");
+        add(TokenType.BOOL_LITERAL, "true|false");
+        add(TokenType.FLOAT_LITERAL, "\\d+.\\d+f");
         add(TokenType.INT_LITERAL, "\\d+");
         add(TokenType.STRING_LITERAL,"\"(.*)?\"");
-        add(TokenType.BOOL_LITERAL, "true|false");
 
         add(TokenType.PLUS, "[+]");
         add(TokenType.MINUS, "[-]");

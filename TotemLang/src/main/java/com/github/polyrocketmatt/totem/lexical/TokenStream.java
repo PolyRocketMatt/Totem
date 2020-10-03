@@ -132,6 +132,15 @@ public class TokenStream {
         return read().getType() == TokenType.EOF;
     }
 
+    /**
+     * Get the size of the stream of tokens.
+     *
+     * @return the size
+     */
+    public int size() {
+        return stream.size();
+    }
+
     @Override
     public String toString() {
         StringBuilder str = new StringBuilder().append("\n");

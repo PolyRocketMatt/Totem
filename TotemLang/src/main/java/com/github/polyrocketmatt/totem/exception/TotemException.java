@@ -9,7 +9,7 @@ import com.github.polyrocketmatt.totem.Enums;
  * thrown by Totem.
  */
 
-public class TotemException extends Exception {
+public class TotemException extends RuntimeException {
 
     /** The phase in which the exception was thrown */
     private Enums.Phase phase;
