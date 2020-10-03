@@ -229,12 +229,22 @@ public class TotemTokenizer implements TotemPhase {
 
                     break;
                 case ASTERISK:
-                    if (singleStream.peek(1).getType() == TokenType.EQUAL) {
-                        stream.add(new Token(new Value<>("*=", TokenType.ASTERISK_EQUALS), TokenType.ASTERISK_EQUALS, token.getRow(), token.getColumn()));
-                        singleStream.skip(2);
-                    } else {
-                        stream.add(token);
-                        singleStream.skip(1);
+                    switch (singleStream.peek(1).getType()) {
+                        case ASTERISK:
+                            stream.add(new Token(new Value<>("**", TokenType.DOUBLE_ASTERISK), TokenType.DOUBLE_ASTERISK, token.getRow(), token.getColumn()));
+                            singleStream.skip(2);
+
+                            break;
+                        case EQUAL:
+                            stream.add(new Token(new Value<>("*=", TokenType.ASTERISK_EQUALS), TokenType.ASTERISK_EQUALS, token.getRow(), token.getColumn()));
+                            singleStream.skip(2);
+
+                            break;
+                        default:
+                            stream.add(token);
+                            singleStream.skip(1);
+
+                            break;
                     }
 
                     break;
@@ -325,6 +335,26 @@ public class TotemTokenizer implements TotemPhase {
                             singleStream.skip(1);
 
                             break;
+                    }
+
+                    break;
+                case LESS_THAN:
+                    if (singleStream.peek(1).getType() == TokenType.EQUAL) {
+                        stream.add(new Token(new Value<>("<=", TokenType.LESS_EQUALS), TokenType.LESS_EQUALS, token.getRow(), token.getColumn()));
+                        singleStream.skip(2);
+                    } else {
+                        stream.add(token);
+                        singleStream.skip(1);
+                    }
+
+                    break;
+                case GREATER_THAN:
+                    if (singleStream.peek(1).getType() == TokenType.EQUAL) {
+                        stream.add(new Token(new Value<>(">=", TokenType.GREATER_EQUALS), TokenType.GREATER_EQUALS, token.getRow(), token.getColumn()));
+                        singleStream.skip(2);
+                    } else {
+                        stream.add(token);
+                        singleStream.skip(1);
                     }
 
                     break;

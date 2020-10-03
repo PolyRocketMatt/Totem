@@ -9,6 +9,7 @@ import com.github.polyrocketmatt.totem.lexical.TokenType;
 import com.github.polyrocketmatt.totem.lexical.TotemTokenizer;
 import com.github.polyrocketmatt.totem.node.ParentNode;
 import com.github.polyrocketmatt.totem.node.Node;
+import com.github.polyrocketmatt.totem.parser.TotemParser;
 
 /**
  * Created by PolyRocketMatt on 28/09/2020.
@@ -92,6 +93,7 @@ public class TotemProcessor {
                 throw new ParserException("Unexpected EOF, expected \"}\"");
 
             System.out.println(stream.toString());
+            System.out.println("\n\n");
         }
 
         ParentNode parent = null;
@@ -99,6 +101,10 @@ public class TotemProcessor {
         if (performSyntacticAnalysis) {
             if (stream == null)
                 throw new ParserException("Stream of tokens cannot be null!");
+
+            TotemParser parser = new TotemParser(stream);
+
+            parser.parse();
         }
     }
 

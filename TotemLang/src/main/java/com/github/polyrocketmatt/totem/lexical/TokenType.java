@@ -47,6 +47,8 @@ public enum TokenType {
     PRE_POST_INCREMENT, //  ++
     PRE_POST_DECREMENT, //  --
     EQUALS_EQUALS,      //  ==
+    LESS_EQUALS,        //  <=
+    GREATER_EQUALS,     //  >=
     NOT_EQUALS,         //  !=
     PLUS_EQUALS,        //  +=
     MINUS_EQUALS,       //  -=
@@ -58,6 +60,7 @@ public enum TokenType {
     DOUBLE_AMPERSAND,   //  &&
     DOUBLE_PIPE,        //  ||
     DOUBLE_F_SLASH,     //  //
+    DOUBLE_ASTERISK,    //  **
 
     //  Keywords
     FLOAT,              //  float

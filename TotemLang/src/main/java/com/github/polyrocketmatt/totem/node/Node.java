@@ -54,8 +54,12 @@ public abstract class Node {
      * @param node the sub-node
      */
     public void add(Node node) {
-        node.setSuperNode(this);
-        subNodes.add(node);
+        if (node != null) {
+            node.setSuperNode(this);
+            subNodes.add(node);
+        }
     }
+
+    public abstract String string(String indent);
 
 }

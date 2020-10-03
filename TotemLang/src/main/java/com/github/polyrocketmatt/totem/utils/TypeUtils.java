@@ -21,6 +21,9 @@ public class TypeUtils {
     /** All the literals in Totem represented as token-types */
     private static final TokenType[] literals = new TokenType[] { TokenType.BOOL_LITERAL, TokenType.FLOAT_LITERAL, TokenType.INT_LITERAL, TokenType.STRING_LITERAL };
 
+    private static final TokenType[] comparables = new TokenType[] { TokenType.EQUALS_EQUALS, TokenType.NOT_EQUALS, TokenType.GREATER_THAN, TokenType.LESS_THAN,
+            TokenType.GREATER_EQUALS, TokenType.LESS_EQUALS };
+
     /**
      * Check if a given token-type is a data-type.
      *
@@ -56,5 +59,13 @@ public class TypeUtils {
      * @return true if the token-type is a literal in Totem
      */
     public static boolean isLiteral(TokenType type) { return Arrays.asList(literals).contains(type); }
+
+    /**
+     * Check if a given token-type is a comparable.
+     *
+     * @param type the token-type
+     * @return true if the token-type is a comparable in Totem
+     */
+    public static boolean isComparable(TokenType type) { return Arrays.asList(comparables).contains(type); }
 
 }

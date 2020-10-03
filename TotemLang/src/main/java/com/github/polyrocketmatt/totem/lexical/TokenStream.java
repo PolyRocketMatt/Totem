@@ -1,5 +1,6 @@
 package com.github.polyrocketmatt.totem.lexical;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Stack;
 
@@ -62,9 +63,7 @@ public class TokenStream {
      * @return the current token in the stream.
      */
     public Token read() {
-        if (stream.size() >= 1)
-            return stream.getFirst();
-        return null;
+        return peek(0);
     }
 
     /**
@@ -86,7 +85,7 @@ public class TokenStream {
      * @return the offset token
      */
     public Token peek(int offset) {
-        if (stream.size() >= offset)
+        if (stream.size() >= offset + 1)
             return stream.get(offset);
         return null;
     }
@@ -106,6 +105,31 @@ public class TokenStream {
         }
 
         return new TokenStream[] { local, this };
+    }
+
+    /**
+     * Check if the current token matches one of the given tokens.
+     *
+     * @param types the possible types to match
+     * @return true if the current token matches one of the types
+     */
+    public Token match(TokenType... types) {
+        for (TokenType type : types) {
+            if (!isAtEnd() && read().getType() == type) {
+                return stream.pop();   //  Return the token
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * Check if the stream is at the end.
+     *
+     * @return true if the current token is an EOF token
+     */
+    public boolean isAtEnd() {
+        return read().getType() == TokenType.EOF;
     }
 
     @Override
