@@ -1,0 +1,19 @@
+def object(int param) {
+
+    int a;
+
+    object = {
+        //  This is a comment
+        a = 5 + param;
+    }
+
+}
+
+(int, string) function() {
+    print(1);
+
+    return (0, "");
+}
+
+//  Expected length is 44 tokens
+//  EOF

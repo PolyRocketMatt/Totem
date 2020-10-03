@@ -117,6 +117,8 @@ public class TotemTokenizer implements TotemPhase {
 
         int lineIndex = 1;
         for (String line : source.split("\n")) {
+            line = line.trim();
+
             if (!line.startsWith("//")) {
                 line = line.trim();
                 lineIndex++;

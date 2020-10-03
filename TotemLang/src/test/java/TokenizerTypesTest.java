@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
  * Created by PolyRocketMatt on 03/10/2020.
  */
 
-public class TokenizerTests {
+public class TokenizerTypesTest {
 
     @Test
     public void testInvalidTokenAt() {

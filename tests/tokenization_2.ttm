@@ -1,0 +1,6 @@
+//  This file contains invalid data!
+def object(int param, @) {
+
+    //  This should be ignored
+
+}
