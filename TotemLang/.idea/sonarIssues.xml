@@ -13,6 +13,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/lexical/TokenType.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/lexical/TotemTokenizer.java">
           <value>
             <set />

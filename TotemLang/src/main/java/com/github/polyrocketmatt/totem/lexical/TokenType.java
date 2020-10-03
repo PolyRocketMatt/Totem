@@ -59,7 +59,6 @@ public enum TokenType {
     OR_EQUALS,          //  |=
     DOUBLE_AMPERSAND,   //  &&
     DOUBLE_PIPE,        //  ||
-    DOUBLE_F_SLASH,     //  //
     DOUBLE_ASTERISK,    //  **
 
     //  Keywords
@@ -74,8 +73,8 @@ public enum TokenType {
     FOR,                //  for
     WHILE,              //  while
     IF,                 //  if
-    ELSE,               //  else
     ELSE_IF,            //  elseif
+    ELSE,               //  else
     TYPE_OF,            //  typeof
     VOID,               //  void
     PRINT,              //  print

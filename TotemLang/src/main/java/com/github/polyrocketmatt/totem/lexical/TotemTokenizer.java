@@ -76,8 +76,8 @@ public class TotemTokenizer implements TotemPhase {
         add(TokenType.FOR, "for");
         add(TokenType.WHILE, "while");
         add(TokenType.IF, "if");
-        add(TokenType.ELSE, "else");
         add(TokenType.ELSE_IF, "elseif");
+        add(TokenType.ELSE, "else");
         add(TokenType.TYPE_OF, "typeof");
         add(TokenType.VOID, "void");
         add(TokenType.PRINT, "print");
@@ -249,22 +249,12 @@ public class TotemTokenizer implements TotemPhase {
 
                     break;
                 case F_SLASH:
-                    switch (singleStream.peek(1).getType()) {
-                        case F_SLASH:
-                            stream.add(new Token(new Value<>("//", TokenType.DOUBLE_F_SLASH), TokenType.DOUBLE_F_SLASH, token.getRow(), token.getColumn()));
-                            singleStream.skip(2);
-
-                            break;
-                        case EQUAL:
-                            stream.add(new Token(new Value<>("/=", TokenType.F_SLASH_EQUALS), TokenType.F_SLASH_EQUALS, token.getRow(), token.getColumn()));
-                            singleStream.skip(2);
-
-                            break;
-                        default:
-                            stream.add(token);
-                            singleStream.skip(1);
-
-                            break;
+                    if (singleStream.peek(1).getType() == TokenType.EQUAL) {
+                        stream.add(new Token(new Value<>("/=", TokenType.F_SLASH_EQUALS), TokenType.F_SLASH_EQUALS, token.getRow(), token.getColumn()));
+                        singleStream.skip(2);
+                    } else {
+                        stream.add(token);
+                        singleStream.skip(1);
                     }
 
                     break;
