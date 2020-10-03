@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9ad8e6cc-e056-4c2a-a2e6-8a9706e4c77d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Totem.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/.idea/sonarIssues.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/TotemLang.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/exception/DivisionByZeroException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/exception/TypeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/lexical/TotemTokenizer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/node/ExpressionNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/node/LiteralExpression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/parser/AbstractParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/parser/LiteralParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/parser/TotemParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/utils/Precedence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/utils/RepresentableValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/Enums$ColorProfile.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/Enums$Phase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/Enums.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/Runtime.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/Totem.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/TotemPhase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/TotemProcessor$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/TotemProcessor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/exception/DivisionByZeroException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/exception/InterpreterException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/exception/ParameterException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/exception/ParserException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/exception/TokenizerException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/exception/TotemException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/exception/TypeException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/lexical/Token.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/lexical/TokenData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/lexical/TokenStream.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/lexical/TokenType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/lexical/TotemTokenizer$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/lexical/TotemTokenizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/node/ExpressionNode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/node/LiteralExpression.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/node/Node.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/node/ParentNode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/parser/AbstractParser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/parser/LiteralParser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/parser/TotemParser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/utils/IdentityResolver.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/utils/Parameter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/utils/Precedence.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/utils/RepresentableValue.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/utils/TypeUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TotemLang/target/classes/com/github/polyrocketmatt/totem/utils/Value.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/Enums.java" beforeDir="false" afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/Enums.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/Runtime.java" beforeDir="false" afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/Runtime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/Totem.java" beforeDir="false" afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/Totem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/TotemPhase.java" beforeDir="false" afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/TotemPhase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/TotemProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/TotemProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/exception/ParameterException.java" beforeDir="false" afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/exception/ParameterException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/exception/ParserException.java" beforeDir="false" afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/exception/ParserException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/exception/TokenizerException.java" beforeDir="false" afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/exception/TokenizerException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/exception/TotemException.java" beforeDir="false" afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/exception/TotemException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/exception/TranslatorException.java" beforeDir="false" afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/exception/InterpreterException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/lexical/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/lexical/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/lexical/TokenData.java" beforeDir="false" afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/lexical/TokenData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/lexical/TokenStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/lexical/TokenStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/lexical/TokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/lexical/TokenType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/lexical/TotemTokenizer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/node/MethodNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/node/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/node/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/node/ObjectNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/node/ParentNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/node/ParentNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/parser/AbstractParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/parser/MethodParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/parser/ObjectParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/parser/TotemParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/translator/AbstractTranslator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/translator/MethodTranslator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/translator/ObjectTranslator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/translator/TotemTranslator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/translator/TypeResolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/utils/IdentityResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/utils/IdentityResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/utils/Parameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/utils/Parameter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/utils/TypeUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/utils/TypeUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/totem-lang/src/com/github/polyrocketmatt/totem/lang/utils/Value.java" beforeDir="false" afterPath="$PROJECT_DIR$/TotemLang/src/main/java/com/github/polyrocketmatt/totem/utils/Value.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\matth\Desktop\Totem\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1i9pM4gxCfCmmoLXmHxxj5qgazh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/TotemLang" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\matth\Desktop\Totem\totem-lang" />
+      <recent name="C:\Users\matth\Desktop\Totem" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Runtime">
+    <configuration name="Runtime" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.github.polyrocketmatt.totem.Runtime" />
+      <module name="TotemLang" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.polyrocketmatt.totem.exception.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="JUnit" factoryName="JUnit">
+      <module name="Totem" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Runtime" />
+      <item itemvalue="JUnit.Test" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Runtime" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9ad8e6cc-e056-4c2a-a2e6-8a9706e4c77d" name="Default Changelist" comment="" />
+      <created>1601329610155</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601329610155</updated>
+      <workItem from="1601329611298" duration="5031000" />
+      <workItem from="1601370224042" duration="2035000" />
+      <workItem from="1601372268308" duration="785000" />
+      <workItem from="1601393517361" duration="3383000" />
+      <workItem from="1601399442315" duration="445000" />
+      <workItem from="1601404423096" duration="10938000" />
+      <workItem from="1601459387474" duration="13077000" />
+      <workItem from="1601491010828" duration="4092000" />
+      <workItem from="1601571428667" duration="7330000" />
+      <workItem from="1601632546110" duration="4287000" />
+      <workItem from="1601640290948" duration="839000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="179" key="#Project_Structure" timestamp="1601372179098">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="179" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1601372179098" />
+    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601493211083">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601493211083" />
+    <state x="765" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1601633331718">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="237" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1601633331718" />
+    <state x="689" y="305" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1601493114820">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="689" y="305" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601493114820" />
+    <state x="808" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1601330311374">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="808" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601330311374" />
+    <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601584310216">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601584310216" />
+    <state x="635" y="235" key="FileChooserDialogImpl" timestamp="1601641328631">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="635" y="235" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601641328631" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1601577198215">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601577198215" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1601577198215">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601577198215" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1601577198215">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601577198215" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1601577198215">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601577198215" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1601492114920">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601492114920" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1601492114920">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601492114920" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1601492114920">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601492114920" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1601492114920">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601492114920" />
+    <state x="461" y="163" key="SettingsEditor" timestamp="1601493092450">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601493092450" />
+    <state x="342" y="141" key="new project wizard" timestamp="1601636101307">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="342" y="141" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1601636101307" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1601494507161">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601494507161" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Totem$Runtime.ic" NAME="Runtime Coverage Results" MODIFIED="1601490994812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.github.polyrocketmatt.totem.*</FILTER>
+    </SUITE>
+  </component>
+</project>
