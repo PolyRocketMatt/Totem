@@ -2,6 +2,7 @@ package com.github.polyrocketmatt.totem.node;
 
 import com.github.polyrocketmatt.totem.exception.InterpreterException;
 import com.github.polyrocketmatt.totem.interpreter.TotemInterpreter;
+import com.github.polyrocketmatt.totem.parser.AbstractParser;
 
 import java.util.LinkedList;
 
@@ -18,6 +19,11 @@ public class ParentNode extends Node {
     }
 
     @Override
+    public AbstractParser.NodeType getNodeType() {
+        return AbstractParser.NodeType.PARENT_NODE;
+    }
+
+    @Override
     public void visit(TotemInterpreter interpreter) throws InterpreterException {
         for (Node subNode : getSubNodes())
             subNode.visit(interpreter);
@@ -27,15 +33,12 @@ public class ParentNode extends Node {
     public String string(String indent) {
         StringBuilder builder = new StringBuilder();
 
-        builder.append("NODE[PARENT]").append("\n");
+        builder.append("NODE=PARENT").append("\n");
 
-        for (Node subNode : getSubNodes()) {
+        for (Node subNode : getSubNodes())
             builder.append(subNode.string("    ")).append("\n");
-        }
 
-        System.out.println(builder.toString());
-
-        return "";
+        return builder.toString();
     }
 
 }

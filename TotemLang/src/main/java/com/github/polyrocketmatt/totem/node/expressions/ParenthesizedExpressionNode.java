@@ -4,6 +4,7 @@ import com.github.polyrocketmatt.totem.exception.InterpreterException;
 import com.github.polyrocketmatt.totem.interpreter.TotemInterpreter;
 import com.github.polyrocketmatt.totem.node.ExpressionNode;
 import com.github.polyrocketmatt.totem.node.Node;
+import com.github.polyrocketmatt.totem.parser.AbstractParser;
 
 /**
  * Created by PolyRocketMatt on 03/10/2020.
@@ -17,6 +18,11 @@ public class ParenthesizedExpressionNode extends ExpressionNode {
         super(superNode);
 
         this.expression = expression;
+    }
+
+    @Override
+    public AbstractParser.NodeType getNodeType() {
+        return AbstractParser.NodeType.EXPRESSION_NODE;
     }
 
     @Override

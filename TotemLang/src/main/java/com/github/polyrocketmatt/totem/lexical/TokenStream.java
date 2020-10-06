@@ -1,5 +1,11 @@
 package com.github.polyrocketmatt.totem.lexical;
 
+import com.github.polyrocketmatt.totem.Totem;
+import com.github.polyrocketmatt.totem.exception.ParserException;
+import com.github.polyrocketmatt.totem.parser.TotemParser;
+import com.github.polyrocketmatt.totem.utils.TypeUtils;
+
+import java.text.MessageFormat;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Stack;
@@ -14,6 +20,9 @@ public class TokenStream {
 
     /** The stream of tokens is represented as a linked list, since the order does matter! */
     private LinkedList<Token> stream;
+
+    /** The parser that uses this stream */
+    private TotemParser parser;
 
     /**
      * Initialize a new stream of tokens.
@@ -36,6 +45,18 @@ public class TokenStream {
      */
     public LinkedList<Token> getStream() {
         return new LinkedList<>(stream);
+    }
+
+    /**
+     * Set the parser for this stream.
+     *
+     * @param parser the parser
+     */
+    public void setParser(TotemParser parser) {
+        if (this.parser != null)
+            throw new ParserException(parser, "Cannot override parser!");
+
+        this.parser = parser;
     }
 
     /**
@@ -114,13 +135,26 @@ public class TokenStream {
      * @return true if the current token matches one of the types
      */
     public Token match(TokenType... types) {
-        for (TokenType type : types) {
-            if (!isAtEnd() && read().getType() == type) {
-                return stream.pop();   //  Return the token
-            }
-        }
+        for (TokenType type : types)
+            if (!isAtEnd() && read().getType() == type)
+                return stream.pop();    //  Return the token
 
         return null;
+    }
+
+    /**
+     * Check if the current token matches one of the given tokens.
+     *
+     * @param types the possible types to match
+     * @throws ParserException if none of the given types match the current token-type
+     * @return true if the current token matches one of the types
+     */
+    public Token matchOrThrow(TokenType... types) {
+        for (TokenType type : types)
+            if (!isAtEnd() && read().getType() == type)
+                return stream.pop();    //  Return the token
+
+        throw new ParserException(parser, MessageFormat.format("Expected token of types {1}, found {2} instead!", TypeUtils.getTypesAsString(types), read().getType().toString()));
     }
 
     /**

@@ -4,6 +4,7 @@ import com.github.polyrocketmatt.totem.exception.InterpreterException;
 import com.github.polyrocketmatt.totem.interpreter.TotemInterpreter;
 import com.github.polyrocketmatt.totem.node.ExpressionNode;
 import com.github.polyrocketmatt.totem.node.Node;
+import com.github.polyrocketmatt.totem.parser.AbstractParser;
 import com.github.polyrocketmatt.totem.utils.RepresentableValue;
 import com.github.polyrocketmatt.totem.utils.Value;
 
@@ -24,8 +25,13 @@ public class LiteralExpressionNode extends ExpressionNode {
     }
 
     @Override
+    public AbstractParser.NodeType getNodeType() {
+        return AbstractParser.NodeType.EXPRESSION_NODE;
+    }
+
+    @Override
     public void visit(TotemInterpreter interpreter) throws InterpreterException {
-        interpreter.getComputationalResults().push(new RepresentableValue(literal));
+        interpreter.getRepresentableValues().push(new RepresentableValue(literal));
     }
 
     @Override

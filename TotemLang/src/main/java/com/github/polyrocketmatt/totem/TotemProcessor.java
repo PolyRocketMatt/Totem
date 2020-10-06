@@ -7,10 +7,8 @@ import com.github.polyrocketmatt.totem.exception.InterpreterException;
 import com.github.polyrocketmatt.totem.interpreter.TotemInterpreter;
 import com.github.polyrocketmatt.totem.lexical.Token;
 import com.github.polyrocketmatt.totem.lexical.TokenStream;
-import com.github.polyrocketmatt.totem.lexical.TokenType;
 import com.github.polyrocketmatt.totem.lexical.TotemTokenizer;
 import com.github.polyrocketmatt.totem.node.ParentNode;
-import com.github.polyrocketmatt.totem.node.Node;
 import com.github.polyrocketmatt.totem.parser.TotemParser;
 
 /**
@@ -94,7 +92,7 @@ public class TotemProcessor {
             }
 
             if (count != 0)
-                throw new ParserException("Unexpected EOF, expected \"}\"");
+                throw new TotemException(Enums.Phase.LEXICAL_ANALYSIS, Enums.ColorProfile.ERROR, "Unexpected EOF, expected \"}\"");
 
             if (isOut) {
                 System.out.println(stream.toString());
@@ -106,7 +104,7 @@ public class TotemProcessor {
 
         if (performSyntacticAnalysis) {
             if (stream == null)
-                throw new ParserException("Stream of tokens cannot be null!");
+                throw new TotemException(Enums.Phase.SYNTACTIC_ANALYSIS, Enums.ColorProfile.ERROR, "Stream of tokens cannot be null!");
 
             try {
                 TotemParser parser = new TotemParser(stream);

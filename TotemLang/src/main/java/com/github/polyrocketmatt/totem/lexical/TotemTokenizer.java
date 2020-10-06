@@ -69,6 +69,7 @@ public class TotemTokenizer implements TotemPhase {
         add(TokenType.INT, "int");
         add(TokenType.STRING, "string");
         add(TokenType.BOOL, "bool");
+        add(TokenType.VAR, "var");
         add(TokenType.DEF, "def");
         add(TokenType.USE, "use");
         add(TokenType.NULL, "null");

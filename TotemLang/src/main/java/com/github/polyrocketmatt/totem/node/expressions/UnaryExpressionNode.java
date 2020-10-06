@@ -6,6 +6,7 @@ import com.github.polyrocketmatt.totem.lexical.Token;
 import com.github.polyrocketmatt.totem.lexical.TokenType;
 import com.github.polyrocketmatt.totem.node.ExpressionNode;
 import com.github.polyrocketmatt.totem.node.Node;
+import com.github.polyrocketmatt.totem.parser.AbstractParser;
 import com.github.polyrocketmatt.totem.utils.RepresentableValue;
 import com.github.polyrocketmatt.totem.utils.TypeUtils;
 import com.github.polyrocketmatt.totem.utils.Value;
@@ -31,10 +32,15 @@ public class UnaryExpressionNode extends ExpressionNode {
     }
 
     @Override
+    public AbstractParser.NodeType getNodeType() {
+        return AbstractParser.NodeType.EXPRESSION_NODE;
+    }
+
+    @Override
     public void visit(TotemInterpreter interpreter) throws InterpreterException {
         right.visit(interpreter);
 
-        RepresentableValue value = interpreter.getComputationalResults().pop();
+        RepresentableValue value = interpreter.getRepresentableValues().pop();
 
         switch (operator.getType()) {
             case PLUS:
@@ -46,12 +52,12 @@ public class UnaryExpressionNode extends ExpressionNode {
                     Integer posIntValue = (Integer) value.getValue();
                     Value<?> posIntTotemValue = new Value<>(+posIntValue, TokenType.INT_LITERAL);
 
-                    interpreter.getComputationalResults().push(new RepresentableValue(posIntTotemValue));
+                    interpreter.getRepresentableValues().push(new RepresentableValue(posIntTotemValue));
                 } else {
                     Float posFloatValue = (Float) value.getValue();
                     Value<?> posFloatTotemValue = new Value<>(+posFloatValue, TokenType.FLOAT_LITERAL);
 
-                    interpreter.getComputationalResults().push(new RepresentableValue(posFloatTotemValue));
+                    interpreter.getRepresentableValues().push(new RepresentableValue(posFloatTotemValue));
                 }
 
                 break;
@@ -64,12 +70,12 @@ public class UnaryExpressionNode extends ExpressionNode {
                     Integer negIntValue = (Integer) value.getValue();
                     Value<?> negIntTotemValue = new Value<>(-negIntValue, TokenType.INT_LITERAL);
 
-                    interpreter.getComputationalResults().push(new RepresentableValue(negIntTotemValue));
+                    interpreter.getRepresentableValues().push(new RepresentableValue(negIntTotemValue));
                 } else {
                     Float negFloatValue = (Float) value.getValue();
                     Value<?> negFloatTotemValue = new Value<>(-negFloatValue, TokenType.FLOAT_LITERAL);
 
-                    interpreter.getComputationalResults().push(new RepresentableValue(negFloatTotemValue));
+                    interpreter.getRepresentableValues().push(new RepresentableValue(negFloatTotemValue));
                 }
 
                 break;
@@ -81,7 +87,7 @@ public class UnaryExpressionNode extends ExpressionNode {
                 Boolean boolValue = (Boolean) value.getValue();
                 Value<?> negatedBoolValue = new Value<>(!boolValue, TokenType.BOOL_LITERAL);
 
-                interpreter.getComputationalResults().push(new RepresentableValue(negatedBoolValue));
+                interpreter.getRepresentableValues().push(new RepresentableValue(negatedBoolValue));
 
                 break;
         }

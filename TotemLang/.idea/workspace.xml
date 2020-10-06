@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84a44dcd-1924-417f-8c3d-f9c1bd69d6d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/matth.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/matth.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/TotemProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/TotemProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/exception/DivisionByZeroException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/exception/ParserException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/exception/ParserException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/interpreter/TotemInterpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/interpreter/TotemInterpreter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/lexical/TokenStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/lexical/TokenStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/lexical/TokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/lexical/TokenType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/lexical/TotemTokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/lexical/TotemTokenizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/ExpressionNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/ExpressionNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/ParentNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/ParentNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/expressions/BinaryExpressionNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/expressions/BinaryExpressionNode.java" afterDir="false" />
@@ -15,23 +18,31 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/expressions/LiteralExpressionNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/expressions/LiteralExpressionNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/expressions/ParenthesizedExpressionNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/expressions/ParenthesizedExpressionNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/expressions/UnaryExpressionNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/expressions/UnaryExpressionNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/AbstractParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/AbstractParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/TotemParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/TotemParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/utils/RepresentableValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/utils/RepresentableValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/utils/IdentityResolver.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/utils/TypeUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/utils/TypeUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/TotemProcessor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/TotemProcessor$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/TotemProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/TotemProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/interpreter/TotemInterpreter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/interpreter/TotemInterpreter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/lexical/TokenStream.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/lexical/TokenStream.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/lexical/TokenType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/lexical/TokenType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/lexical/TotemTokenizer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/lexical/TotemTokenizer$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/lexical/TotemTokenizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/lexical/TotemTokenizer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/ExpressionNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/ExpressionNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/Node.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/ParentNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/ParentNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/BinaryExpressionNode$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/BinaryExpressionNode$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/BinaryExpressionNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/BinaryExpressionNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/ComparisonExpressionNode$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/ComparisonExpressionNode$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/ComparisonExpressionNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/ComparisonExpressionNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/LiteralExpressionNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/LiteralExpressionNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/ParenthesizedExpressionNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/ParenthesizedExpressionNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/UnaryExpressionNode$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/UnaryExpressionNode$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/UnaryExpressionNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/UnaryExpressionNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/AbstractParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/AbstractParser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/TotemParser$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/TotemParser$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/TotemParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/TotemParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/RepresentableValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/RepresentableValue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/TypeUtils$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/TypeUtils$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/TypeUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/TypeUtils.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +56,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -80,7 +92,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/KUL/GNA/Practicum 3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -141,7 +153,13 @@
       <workItem from="1601640290482" duration="12667000" />
       <workItem from="1601670801269" duration="4207000" />
       <workItem from="1601721048205" duration="6673000" />
-      <workItem from="1601735687349" duration="10160000" />
+      <workItem from="1601735687349" duration="11883000" />
+      <workItem from="1601902163381" duration="32000" />
+      <workItem from="1601902205680" duration="77000" />
+      <workItem from="1601902291085" duration="3299000" />
+      <workItem from="1601905625429" duration="2655000" />
+      <workItem from="1601934044310" duration="2463000" />
+      <workItem from="1601997921739" duration="3809000" />
     </task>
     <servers />
   </component>
@@ -157,10 +175,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601737417748" />
-    <state x="765" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1601742831128">
+    <state x="765" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1601906320420">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="237" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1601742831128" />
+    <state x="765" y="237" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1601906320420" />
     <state x="808" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1601734686645">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -169,42 +187,42 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601683982578" />
-    <state x="1043" y="373" key="FileChooserDialogImpl" timestamp="1601646032487">
+    <state x="1043" y="373" key="FileChooserDialogImpl" timestamp="1601902193997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1043" y="373" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601646032487" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1601750831608">
+    <state x="1043" y="373" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601902193997" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1602001126096">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601750831608" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1601750831607">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602001126096" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1602001126096">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601750831607" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1601750831607">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602001126096" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1602001126096">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601750831607" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1601750831607">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602001126096" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1602001126096">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601750831607" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1601750487574">
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602001126096" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1602001024513">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601750487574" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1601750487573">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602001024513" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1602001024513">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601750487573" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1601750487573">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602001024513" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1602001024513">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601750487573" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1601750487573">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602001024513" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1602001024513">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601750487573" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602001024513" />
     <state x="461" y="163" key="SettingsEditor" timestamp="1601735676566">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -219,15 +237,30 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/expressions/BinaryExpressionNode.java</url>
-          <line>135</line>
+          <line>141</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/expressions/ComparisonExpressionNode.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="11" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/parsers/VariableDeclarationParser.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/TotemParser.java</url>
+          <line>137</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/parsers/ObjectParser.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/TotemLang$Runtime.ic" NAME="Runtime Coverage Results" MODIFIED="1601908256634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.github.polyrocketmatt.totem.*</FILTER>
+    </SUITE>
   </component>
 </project>

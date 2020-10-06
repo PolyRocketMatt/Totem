@@ -21,7 +21,7 @@ public class TotemInterpreter implements TotemPhase {
     private ParentNode parent;
 
     /** A stack of computational results */
-    private Stack<RepresentableValue> computationalResults;
+    private Stack<RepresentableValue> representableValues;
 
     /**
      * Initialize an interpreter.
@@ -31,7 +31,7 @@ public class TotemInterpreter implements TotemPhase {
     public TotemInterpreter(ParentNode parent) {
         this.parent = parent;
 
-        this.computationalResults = new Stack<>();
+        this.representableValues = new Stack<>();
     }
 
     /**
@@ -39,8 +39,8 @@ public class TotemInterpreter implements TotemPhase {
      *
      * @return the stack of computational results.
      */
-    public Stack<RepresentableValue> getComputationalResults() {
-        return computationalResults;
+    public Stack<RepresentableValue> getRepresentableValues() {
+        return representableValues;
     }
 
     @Override
@@ -48,7 +48,7 @@ public class TotemInterpreter implements TotemPhase {
         try {
             visit(this.parent);
 
-            for (RepresentableValue computationalRes : computationalResults)
+            for (RepresentableValue computationalRes : representableValues)
                 System.out.println(computationalRes);
         } catch (InterpreterException ex) {
             System.out.println(ex.getError());

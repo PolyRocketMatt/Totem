@@ -22,8 +22,13 @@ public class TypeUtils {
     /** All the literals in Totem represented as token-types */
     private static final TokenType[] literals = new TokenType[] { TokenType.BOOL_LITERAL, TokenType.FLOAT_LITERAL, TokenType.INT_LITERAL, TokenType.STRING_LITERAL };
 
+    /** All the comparable token-types */
     private static final TokenType[] comparables = new TokenType[] { TokenType.EQUALS_EQUALS, TokenType.NOT_EQUALS, TokenType.GREATER_THAN, TokenType.LESS_THAN,
             TokenType.GREATER_EQUALS, TokenType.LESS_EQUALS };
+
+    /** All the assignable token-types */
+    private static final TokenType[] assignables = new TokenType[] { TokenType.EQUAL, TokenType.PLUS_EQUALS, TokenType.MINUS_EQUALS, TokenType.ASTERISK_EQUALS,
+            TokenType.F_SLASH_EQUALS, TokenType.MODULO_EQUALS };
 
     /**
      * Check if a given token-type is a data-type.
@@ -70,6 +75,14 @@ public class TypeUtils {
     public static boolean isComparable(TokenType type) { return Arrays.asList(comparables).contains(type); }
 
     /**
+     * Check if a given token-type is an assignable.
+     *
+     * @param type the token-type
+     * @return true if the token-type is an assignable in Totem
+     */
+    public static boolean isAssignable(TokenType type) { return Arrays.asList(assignables).contains(type); }
+
+    /**
      * Find the primitive type of a literal.
      *
      * @param type the literal
@@ -109,6 +122,23 @@ public class TypeUtils {
         }
 
         return false;
+    }
+
+    /**
+     * Get the given list of types as a string representation
+     *
+     * @param types the types
+     * @return a string representation of the types
+     */
+    public static String getTypesAsString(TokenType... types) {
+        StringBuilder builder = new StringBuilder();
+
+        for (int i = 0; i < types.length - 1; i++)
+            builder.append(types[i].toString()).append(", ");
+
+        builder.append(types[types.length - 1]).append(" ");
+
+        return builder.toString();
     }
 
 }

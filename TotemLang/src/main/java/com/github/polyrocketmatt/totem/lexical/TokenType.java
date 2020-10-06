@@ -66,6 +66,7 @@ public enum TokenType {
     INT,                //  int
     STRING,             //  string
     BOOL,               //  boolean
+    VAR,                //  any type
     DEF,                //  def
     USE,                //  import
     NULL,               //  null

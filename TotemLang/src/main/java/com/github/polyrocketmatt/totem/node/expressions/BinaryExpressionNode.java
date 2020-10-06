@@ -6,6 +6,7 @@ import com.github.polyrocketmatt.totem.lexical.Token;
 import com.github.polyrocketmatt.totem.lexical.TokenType;
 import com.github.polyrocketmatt.totem.node.ExpressionNode;
 import com.github.polyrocketmatt.totem.node.Node;
+import com.github.polyrocketmatt.totem.parser.AbstractParser;
 import com.github.polyrocketmatt.totem.utils.RepresentableValue;
 import com.github.polyrocketmatt.totem.utils.TypeUtils;
 import com.github.polyrocketmatt.totem.utils.Value;
@@ -31,12 +32,17 @@ public class BinaryExpressionNode extends ExpressionNode {
     }
 
     @Override
+    public AbstractParser.NodeType getNodeType() {
+        return AbstractParser.NodeType.EXPRESSION_NODE;
+    }
+
+    @Override
     public void visit(TotemInterpreter interpreter) throws InterpreterException {
         left.visit(interpreter);
         right.visit(interpreter);
 
-        RepresentableValue rightValue = interpreter.getComputationalResults().pop();
-        RepresentableValue leftValue = interpreter.getComputationalResults().pop();
+        RepresentableValue rightValue = interpreter.getRepresentableValues().pop();
+        RepresentableValue leftValue = interpreter.getRepresentableValues().pop();
 
         if (!TypeUtils.isCompatibleForComputation(leftValue.getType(), rightValue.getType()))
             throw new InterpreterException(MessageFormat.format("Cannot bind binary operator {0} to types {1} and {2}!",
@@ -50,11 +56,11 @@ public class BinaryExpressionNode extends ExpressionNode {
                     if (rightValue.getType() == TokenType.INT_LITERAL) {
                         Integer intRight = (Integer) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(intLeft + intRight, TokenType.INT_LITERAL)));
+                        interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(intLeft + intRight, TokenType.INT_LITERAL)));
                     } else {
                         Float floatRight = (Float) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(intLeft + floatRight, TokenType.FLOAT_LITERAL)));
+                        interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(intLeft + floatRight, TokenType.FLOAT_LITERAL)));
                     }
                 } else if (leftValue.getType() == TokenType.FLOAT_LITERAL){
                     Float floatLeft = (Float) leftValue.getValue();
@@ -62,17 +68,17 @@ public class BinaryExpressionNode extends ExpressionNode {
                     if (rightValue.getType() == TokenType.INT_LITERAL) {
                         Integer intRight = (Integer) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(floatLeft + intRight, TokenType.FLOAT_LITERAL)));
+                        interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(floatLeft + intRight, TokenType.FLOAT_LITERAL)));
                     } else {
                         Float floatRight = (Float) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(floatLeft + floatRight, TokenType.FLOAT_LITERAL)));
+                        interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(floatLeft + floatRight, TokenType.FLOAT_LITERAL)));
                     }
                 } else {
                     String stringLeft = (String) leftValue.getValue();
                     String stringRight = (String) rightValue.getValue();
 
-                    interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(stringLeft + stringRight, TokenType.STRING_LITERAL)));
+                    interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(stringLeft + stringRight, TokenType.STRING_LITERAL)));
                 }
 
                 break;
@@ -83,11 +89,11 @@ public class BinaryExpressionNode extends ExpressionNode {
                     if (rightValue.getType() == TokenType.INT_LITERAL) {
                         Integer intRight = (Integer) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(intLeft - intRight, TokenType.INT_LITERAL)));
+                        interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(intLeft - intRight, TokenType.INT_LITERAL)));
                     } else {
                         Float floatRight = (Float) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(intLeft - floatRight, TokenType.FLOAT_LITERAL)));
+                        interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(intLeft - floatRight, TokenType.FLOAT_LITERAL)));
                     }
                 } else {
                     Float floatLeft = (Float) leftValue.getValue();
@@ -95,11 +101,11 @@ public class BinaryExpressionNode extends ExpressionNode {
                     if (rightValue.getType() == TokenType.INT_LITERAL) {
                         Integer intRight = (Integer) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(floatLeft - intRight, TokenType.FLOAT_LITERAL)));
+                        interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(floatLeft - intRight, TokenType.FLOAT_LITERAL)));
                     } else {
                         Float floatRight = (Float) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(floatLeft - floatRight, TokenType.FLOAT_LITERAL)));
+                        interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(floatLeft - floatRight, TokenType.FLOAT_LITERAL)));
                     }
                 }
 
@@ -111,11 +117,11 @@ public class BinaryExpressionNode extends ExpressionNode {
                     if (rightValue.getType() == TokenType.INT_LITERAL) {
                         Integer intRight = (Integer) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(intLeft * intRight, TokenType.INT_LITERAL)));
+                        interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(intLeft * intRight, TokenType.INT_LITERAL)));
                     } else {
                         Float floatRight = (Float) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(intLeft * floatRight, TokenType.FLOAT_LITERAL)));
+                        interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(intLeft * floatRight, TokenType.FLOAT_LITERAL)));
                     }
                 } else {
                     Float floatLeft = (Float) leftValue.getValue();
@@ -123,11 +129,11 @@ public class BinaryExpressionNode extends ExpressionNode {
                     if (rightValue.getType() == TokenType.INT_LITERAL) {
                         Integer intRight = (Integer) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(floatLeft * intRight, TokenType.FLOAT_LITERAL)));
+                        interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(floatLeft * intRight, TokenType.FLOAT_LITERAL)));
                     } else {
                         Float floatRight = (Float) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(floatLeft * floatRight, TokenType.FLOAT_LITERAL)));
+                        interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(floatLeft * floatRight, TokenType.FLOAT_LITERAL)));
                     }
                 }
 
@@ -151,11 +157,11 @@ public class BinaryExpressionNode extends ExpressionNode {
                     if (rightValue.getType() == TokenType.INT_LITERAL) {
                         Integer intRight = (Integer) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(intLeft / intRight, TokenType.INT_LITERAL)));
+                        interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(intLeft / intRight, TokenType.INT_LITERAL)));
                     } else {
                         Float floatRight = (Float) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(intLeft / floatRight, TokenType.FLOAT_LITERAL)));
+                        interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(intLeft / floatRight, TokenType.FLOAT_LITERAL)));
                     }
                 } else {
                     Float floatLeft = (Float) leftValue.getValue();
@@ -163,11 +169,11 @@ public class BinaryExpressionNode extends ExpressionNode {
                     if (rightValue.getType() == TokenType.INT_LITERAL) {
                         Integer intRight = (Integer) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(floatLeft / intRight, TokenType.FLOAT_LITERAL)));
+                        interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(floatLeft / intRight, TokenType.FLOAT_LITERAL)));
                     } else {
                         Float floatRight = (Float) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(floatLeft / floatRight, TokenType.FLOAT_LITERAL)));
+                        interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(floatLeft / floatRight, TokenType.FLOAT_LITERAL)));
                     }
                 }
 
@@ -179,11 +185,11 @@ public class BinaryExpressionNode extends ExpressionNode {
                     if (rightValue.getType() == TokenType.INT_LITERAL) {
                         Integer intRight = (Integer) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(intLeft % intRight, TokenType.INT_LITERAL)));
+                        interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(intLeft % intRight, TokenType.INT_LITERAL)));
                     } else {
                         Float floatRight = (Float) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(intLeft % floatRight, TokenType.FLOAT_LITERAL)));
+                        interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(intLeft % floatRight, TokenType.FLOAT_LITERAL)));
                     }
                 } else {
                     Float floatLeft = (Float) leftValue.getValue();
@@ -191,11 +197,11 @@ public class BinaryExpressionNode extends ExpressionNode {
                     if (rightValue.getType() == TokenType.INT_LITERAL) {
                         Integer intRight = (Integer) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(floatLeft % intRight, TokenType.FLOAT_LITERAL)));
+                        interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(floatLeft % intRight, TokenType.FLOAT_LITERAL)));
                     } else {
                         Float floatRight = (Float) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(floatLeft % floatRight, TokenType.FLOAT_LITERAL)));
+                        interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(floatLeft % floatRight, TokenType.FLOAT_LITERAL)));
                     }
                 }
 

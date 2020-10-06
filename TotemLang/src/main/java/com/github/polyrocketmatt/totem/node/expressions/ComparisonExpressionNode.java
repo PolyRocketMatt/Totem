@@ -6,6 +6,7 @@ import com.github.polyrocketmatt.totem.lexical.Token;
 import com.github.polyrocketmatt.totem.lexical.TokenType;
 import com.github.polyrocketmatt.totem.node.ExpressionNode;
 import com.github.polyrocketmatt.totem.node.Node;
+import com.github.polyrocketmatt.totem.parser.AbstractParser;
 import com.github.polyrocketmatt.totem.utils.RepresentableValue;
 import com.github.polyrocketmatt.totem.utils.Value;
 
@@ -30,20 +31,25 @@ public class ComparisonExpressionNode extends ExpressionNode {
     }
 
     @Override
+    public AbstractParser.NodeType getNodeType() {
+        return AbstractParser.NodeType.EXPRESSION_NODE;
+    }
+
+    @Override
     public void visit(TotemInterpreter interpreter) throws InterpreterException {
         left.visit(interpreter);
         right.visit(interpreter);
 
-        RepresentableValue rightValue = interpreter.getComputationalResults().pop();
-        RepresentableValue leftValue = interpreter.getComputationalResults().pop();
+        RepresentableValue rightValue = interpreter.getRepresentableValues().pop();
+        RepresentableValue leftValue = interpreter.getRepresentableValues().pop();
 
         switch (operator.getType()) {
             case EQUALS_EQUALS:
-                interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(leftValue.getValue().equals(rightValue.getValue()), TokenType.BOOL_LITERAL)));
+                interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(leftValue.getValue().equals(rightValue.getValue()), TokenType.BOOL_LITERAL)));
 
                 break;
             case NOT_EQUALS:
-                interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(!leftValue.getValue().equals(rightValue.getValue()), TokenType.BOOL_LITERAL)));
+                interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(!leftValue.getValue().equals(rightValue.getValue()), TokenType.BOOL_LITERAL)));
 
                 break;
             case GREATER_THAN:
@@ -58,12 +64,12 @@ public class ComparisonExpressionNode extends ExpressionNode {
                     if (rightValue.getType() == TokenType.INT_LITERAL) {
                         Integer intRight = (Integer) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(
+                        interpreter.getRepresentableValues().push(new RepresentableValue(
                                 new Value<>(intLeft > intRight, TokenType.BOOL_LITERAL)));
                     } else {
                         Float floatRight = (Float) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(
+                        interpreter.getRepresentableValues().push(new RepresentableValue(
                                 new Value<>(intLeft > floatRight, TokenType.BOOL_LITERAL)));
                     }
                 } else {
@@ -72,12 +78,12 @@ public class ComparisonExpressionNode extends ExpressionNode {
                     if (rightValue.getType() == TokenType.INT_LITERAL) {
                         Integer intRight = (Integer) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(
+                        interpreter.getRepresentableValues().push(new RepresentableValue(
                                 new Value<>(floatLeft > intRight, TokenType.BOOL_LITERAL)));
                     } else {
                         Float floatRight = (Float) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(
+                        interpreter.getRepresentableValues().push(new RepresentableValue(
                                 new Value<>(floatLeft > floatRight, TokenType.BOOL_LITERAL)));
                     }
                 }
@@ -95,12 +101,12 @@ public class ComparisonExpressionNode extends ExpressionNode {
                     if (rightValue.getType() == TokenType.INT_LITERAL) {
                         Integer intRight = (Integer) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(
+                        interpreter.getRepresentableValues().push(new RepresentableValue(
                                 new Value<>(intLeft >= intRight, TokenType.BOOL_LITERAL)));
                     } else {
                         Float floatRight = (Float) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(
+                        interpreter.getRepresentableValues().push(new RepresentableValue(
                                 new Value<>(intLeft >= floatRight, TokenType.BOOL_LITERAL)));
                     }
                 } else {
@@ -109,12 +115,12 @@ public class ComparisonExpressionNode extends ExpressionNode {
                     if (rightValue.getType() == TokenType.INT_LITERAL) {
                         Integer intRight = (Integer) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(
+                        interpreter.getRepresentableValues().push(new RepresentableValue(
                                 new Value<>(floatLeft >= intRight, TokenType.BOOL_LITERAL)));
                     } else {
                         Float floatRight = (Float) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(
+                        interpreter.getRepresentableValues().push(new RepresentableValue(
                                 new Value<>(floatLeft >= floatRight, TokenType.BOOL_LITERAL)));
                     }
                 }
@@ -132,12 +138,12 @@ public class ComparisonExpressionNode extends ExpressionNode {
                     if (rightValue.getType() == TokenType.INT_LITERAL) {
                         Integer intRight = (Integer) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(
+                        interpreter.getRepresentableValues().push(new RepresentableValue(
                                 new Value<>(intLeft > intRight, TokenType.BOOL_LITERAL)));
                     } else {
                         Float floatRight = (Float) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(
+                        interpreter.getRepresentableValues().push(new RepresentableValue(
                                 new Value<>(intLeft > floatRight, TokenType.BOOL_LITERAL)));
                     }
                 } else {
@@ -146,12 +152,12 @@ public class ComparisonExpressionNode extends ExpressionNode {
                     if (rightValue.getType() == TokenType.INT_LITERAL) {
                         Integer intRight = (Integer) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(
+                        interpreter.getRepresentableValues().push(new RepresentableValue(
                                 new Value<>(floatLeft > intRight, TokenType.BOOL_LITERAL)));
                     } else {
                         Float floatRight = (Float) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(
+                        interpreter.getRepresentableValues().push(new RepresentableValue(
                                 new Value<>(floatLeft > floatRight, TokenType.BOOL_LITERAL)));
                     }
                 }
@@ -169,12 +175,12 @@ public class ComparisonExpressionNode extends ExpressionNode {
                     if (rightValue.getType() == TokenType.INT_LITERAL) {
                         Integer intRight = (Integer) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(
+                        interpreter.getRepresentableValues().push(new RepresentableValue(
                                 new Value<>(intLeft <= intRight, TokenType.BOOL_LITERAL)));
                     } else {
                         Float floatRight = (Float) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(
+                        interpreter.getRepresentableValues().push(new RepresentableValue(
                                 new Value<>(intLeft <= floatRight, TokenType.BOOL_LITERAL)));
                     }
                 } else {
@@ -183,12 +189,12 @@ public class ComparisonExpressionNode extends ExpressionNode {
                     if (rightValue.getType() == TokenType.INT_LITERAL) {
                         Integer intRight = (Integer) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(
+                        interpreter.getRepresentableValues().push(new RepresentableValue(
                                 new Value<>(floatLeft <= intRight, TokenType.BOOL_LITERAL)));
                     } else {
                         Float floatRight = (Float) rightValue.getValue();
 
-                        interpreter.getComputationalResults().push(new RepresentableValue(
+                        interpreter.getRepresentableValues().push(new RepresentableValue(
                                 new Value<>(floatLeft <= floatRight, TokenType.BOOL_LITERAL)));
                     }
                 }
@@ -202,7 +208,7 @@ public class ComparisonExpressionNode extends ExpressionNode {
                 Boolean boolAndLeft = (Boolean) leftValue.getValue();
                 Boolean boolAndRight = (Boolean) rightValue.getValue();
 
-                interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(boolAndLeft && boolAndRight, TokenType.BOOL_LITERAL)));
+                interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(boolAndLeft && boolAndRight, TokenType.BOOL_LITERAL)));
 
                 break;
             case DOUBLE_PIPE:
@@ -213,7 +219,7 @@ public class ComparisonExpressionNode extends ExpressionNode {
                 Boolean boolOrLeft = (Boolean) leftValue.getValue();
                 Boolean boolOrRight = (Boolean) rightValue.getValue();
 
-                interpreter.getComputationalResults().push(new RepresentableValue(new Value<>(boolOrLeft || boolOrRight, TokenType.BOOL_LITERAL)));
+                interpreter.getRepresentableValues().push(new RepresentableValue(new Value<>(boolOrLeft || boolOrRight, TokenType.BOOL_LITERAL)));
 
                 break;
         }

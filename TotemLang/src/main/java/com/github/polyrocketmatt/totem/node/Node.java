@@ -2,6 +2,7 @@ package com.github.polyrocketmatt.totem.node;
 
 import com.github.polyrocketmatt.totem.exception.InterpreterException;
 import com.github.polyrocketmatt.totem.interpreter.TotemInterpreter;
+import com.github.polyrocketmatt.totem.parser.AbstractParser;
 
 import java.util.LinkedList;
 
@@ -62,6 +63,13 @@ public abstract class Node {
             subNodes.add(node);
         }
     }
+
+    /**
+     * Get the type of node.
+     *
+     * @return the type of node
+     */
+    public abstract AbstractParser.NodeType getNodeType();
 
     /**
      * Routine when a node is visited.
