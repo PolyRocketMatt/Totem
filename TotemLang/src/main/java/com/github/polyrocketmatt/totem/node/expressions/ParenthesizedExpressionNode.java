@@ -8,12 +8,21 @@ import com.github.polyrocketmatt.totem.parser.AbstractParser;
 
 /**
  * Created by PolyRocketMatt on 03/10/2020.
+ *
+ * Represents an expression that is parenthesized.
  */
 
 public class ParenthesizedExpressionNode extends ExpressionNode {
 
+    /** The parenthesized expression */
     private ExpressionNode expression;
 
+    /**
+     * Initialize a new ParenthesizeExpressionNode.
+     *
+     * @param superNode the super-node
+     * @param expression the parenthesized expression
+     */
     public ParenthesizedExpressionNode(Node superNode, ExpressionNode expression) {
         super(superNode);
 

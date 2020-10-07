@@ -5,19 +5,26 @@ import com.github.polyrocketmatt.totem.interpreter.TotemInterpreter;
 import com.github.polyrocketmatt.totem.node.ExpressionNode;
 import com.github.polyrocketmatt.totem.node.Node;
 import com.github.polyrocketmatt.totem.parser.AbstractParser;
-import com.github.polyrocketmatt.totem.utils.RepresentableValue;
+import com.github.polyrocketmatt.totem.utils.representables.RepresentableValue;
 import com.github.polyrocketmatt.totem.utils.Value;
 
 /**
  * Created by PolyRocketMatt on 03/10/2020.
  *
- * Expression that represents a literal.
+ * Represents a literal expression.
  */
 
 public class LiteralExpressionNode extends ExpressionNode {
 
+    /** The literal value */
     private Value<?> literal;
 
+    /**
+     * Initialize a new LiteralExpressionNode.
+     *
+     * @param superNode the super-node
+     * @param literal the literal value
+     */
     public LiteralExpressionNode(Node superNode, Value<?> literal) {
         super(superNode);
 

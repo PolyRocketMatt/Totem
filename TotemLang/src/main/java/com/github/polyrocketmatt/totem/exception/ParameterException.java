@@ -11,6 +11,11 @@ import com.github.polyrocketmatt.totem.Enums;
 
 public class ParameterException extends TotemException {
 
+    /**
+     * Initialize a new ParameterException.
+     *
+     * @param error the error
+     */
     public ParameterException(String error) {
         super(null, Enums.ColorProfile.ERROR, error);
     }

@@ -16,10 +16,17 @@ import java.util.List;
 
 /**
  * Created by PolyRocketMatt on 03/10/2020.
+ *
+ * Parser to parse objects.
  */
 
 public class ObjectParser extends AbstractParser<ObjectNode> implements Acceptor {
 
+    /**
+     * Initialize a new ObjectParser.
+     *
+     * @param parser the original parser
+     */
     public ObjectParser(TotemParser parser) {
         super(parser, parser.getStream());
     }

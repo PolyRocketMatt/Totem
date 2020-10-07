@@ -10,7 +10,7 @@ package com.github.polyrocketmatt.totem;
 public class Enums {
 
     /**
-     * Represents a phase of the transpilation process.
+     * Represents a phase of the interpretation process.
      */
     public enum Phase {
         PRE_ANALYSIS,

@@ -14,10 +14,17 @@ import java.text.MessageFormat;
 
 /**
  * Created by PolyRocketMatt on 03/10/2020.
+ *
+ * Parser to parse expressions.
  */
 
 public class ExpressionParser extends AbstractParser<ExpressionNode> {
 
+    /**
+     * Initialize a new ExpressionParser.
+     *
+     * @param parser the original parser
+     */
     public ExpressionParser(TotemParser parser) {
         super(parser, parser.getStream());
     }

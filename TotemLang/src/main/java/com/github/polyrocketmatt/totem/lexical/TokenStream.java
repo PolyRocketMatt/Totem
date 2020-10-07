@@ -1,14 +1,11 @@
 package com.github.polyrocketmatt.totem.lexical;
 
-import com.github.polyrocketmatt.totem.Totem;
 import com.github.polyrocketmatt.totem.exception.ParserException;
 import com.github.polyrocketmatt.totem.parser.TotemParser;
 import com.github.polyrocketmatt.totem.utils.TypeUtils;
 
 import java.text.MessageFormat;
-import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.Stack;
 
 /**
  * Created by PolyRocketMatt on 29/09/2020.
@@ -109,23 +106,6 @@ public class TokenStream {
         if (stream.size() >= offset + 1)
             return stream.get(offset);
         return null;
-    }
-
-    /**
-     * Split the stream of tokens into two separate streams.
-     * The token at the offset-location is included within the first stream.
-     *
-     * @param offset the offset where the stream should be split
-     * @return an array of streams containing 2 streams
-     */
-    public TokenStream[] split(int offset) {
-        TokenStream local = new TokenStream();
-
-        for (int i = 0; i <= offset; i++) {
-            local.add(pop());
-        }
-
-        return new TokenStream[] { local, this };
     }
 
     /**

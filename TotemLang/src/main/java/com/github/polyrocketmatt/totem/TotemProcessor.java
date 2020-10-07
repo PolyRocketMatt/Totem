@@ -10,6 +10,8 @@ import com.github.polyrocketmatt.totem.lexical.TokenStream;
 import com.github.polyrocketmatt.totem.lexical.TotemTokenizer;
 import com.github.polyrocketmatt.totem.node.ParentNode;
 import com.github.polyrocketmatt.totem.parser.TotemParser;
+import com.github.polyrocketmatt.totem.utils.representables.Representable;
+import com.github.polyrocketmatt.totem.utils.representables.RepresentableValue;
 
 /**
  * Created by PolyRocketMatt on 28/09/2020.
@@ -125,6 +127,13 @@ public class TotemProcessor {
                 TotemInterpreter interpreter = new TotemInterpreter(parent);
 
                 interpreter.process();
+
+                if (isOut) {
+                    for (RepresentableValue computationalRes : interpreter.getRepresentableValues())
+                        System.out.println(computationalRes.toString());
+
+                    System.out.println(((Representable) interpreter.getHolder()).represent(""));
+                }
             } catch (InterpreterException ex) { ex.printStackTrace(); }
         }
     }

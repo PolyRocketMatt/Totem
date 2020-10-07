@@ -7,7 +7,7 @@ import com.github.polyrocketmatt.totem.lexical.TokenType;
 import com.github.polyrocketmatt.totem.node.ExpressionNode;
 import com.github.polyrocketmatt.totem.node.Node;
 import com.github.polyrocketmatt.totem.parser.AbstractParser;
-import com.github.polyrocketmatt.totem.utils.RepresentableValue;
+import com.github.polyrocketmatt.totem.utils.representables.RepresentableValue;
 import com.github.polyrocketmatt.totem.utils.TypeUtils;
 import com.github.polyrocketmatt.totem.utils.Value;
 
@@ -15,14 +15,29 @@ import java.text.MessageFormat;
 
 /**
  * Created by PolyRocketMatt on 03/10/2020.
+ *
+ * Represents an expression created by a binary operator.
  */
 
 public class BinaryExpressionNode extends ExpressionNode {
 
+    /** The left expression */
     private ExpressionNode left;
+
+    /** The right expression */
     private ExpressionNode right;
+
+    /** The binary operator */
     private Token operator;
 
+    /**
+     * Initialize a new BinaryExpressionNode.
+     *
+     * @param superNode the super-node
+     * @param left the left expression
+     * @param right the right expression
+     * @param operator the binary operator
+     */
     public BinaryExpressionNode(Node superNode, ExpressionNode left, ExpressionNode right, Token operator) {
         super(superNode);
 

@@ -184,6 +184,12 @@ public class TotemTokenizer implements TotemPhase {
         postProcess(singleStream);
     }
 
+    /**
+     * Post process the tokenizer to replace single characters
+     * with possible multi-character tokens.
+     *
+     * @param singleStream the stream generated from the source
+     */
     private void postProcess(TokenStream singleStream) {
         this.stream = new TokenStream();
 
@@ -191,6 +197,18 @@ public class TotemTokenizer implements TotemPhase {
             Token token = singleStream.read();
 
             switch (token.getType()) {
+                case INT_LITERAL:
+                    if (singleStream.peek(1).getType() == TokenType.DOT && singleStream.peek(2).getType() == TokenType.INT_LITERAL) {
+                        String value = token.getValue().getValue().toString() + "." + singleStream.peek(2).getValue().getValue().toString();
+
+                        stream.add(new Token(new Value<>(Float.parseFloat(value), TokenType.FLOAT_LITERAL), TokenType.FLOAT_LITERAL, token.getRow(), token.getColumn()));
+                        singleStream.skip(3);
+                    } else {
+                        stream.add(token);
+                        singleStream.skip(1);
+                    }
+
+                    break;
                 case PLUS:
                     switch (singleStream.peek(1).getType()) {
                         case PLUS:

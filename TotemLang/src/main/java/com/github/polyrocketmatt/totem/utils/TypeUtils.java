@@ -1,6 +1,5 @@
 package com.github.polyrocketmatt.totem.utils;
 
-import com.github.polyrocketmatt.totem.exception.InterpreterException;
 import com.github.polyrocketmatt.totem.lexical.TokenType;
 
 import java.util.Arrays;

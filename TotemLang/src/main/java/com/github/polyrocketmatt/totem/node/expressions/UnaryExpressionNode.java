@@ -7,7 +7,7 @@ import com.github.polyrocketmatt.totem.lexical.TokenType;
 import com.github.polyrocketmatt.totem.node.ExpressionNode;
 import com.github.polyrocketmatt.totem.node.Node;
 import com.github.polyrocketmatt.totem.parser.AbstractParser;
-import com.github.polyrocketmatt.totem.utils.RepresentableValue;
+import com.github.polyrocketmatt.totem.utils.representables.RepresentableValue;
 import com.github.polyrocketmatt.totem.utils.TypeUtils;
 import com.github.polyrocketmatt.totem.utils.Value;
 
@@ -16,14 +16,24 @@ import java.text.MessageFormat;
 /**
  * Created by PolyRocketMatt on 03/10/2020.
  *
- * Expression that represents a unary expression.
+ * Represents an expression created by a unary operator.
  */
 
 public class UnaryExpressionNode extends ExpressionNode {
 
+    /** The expression */
     private ExpressionNode right;
+
+    /** The unary operator */
     private Token operator;
 
+    /**
+     * Initialize a new UnaryExpressionNode.
+     *
+     * @param superNode the super-node
+     * @param right the expression
+     * @param operator the unary operator
+     */
     public UnaryExpressionNode(Node superNode, ExpressionNode right, Token operator) {
         super(superNode);
 

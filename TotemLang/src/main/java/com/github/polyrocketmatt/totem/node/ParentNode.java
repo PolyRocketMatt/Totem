@@ -8,12 +8,20 @@ import java.util.LinkedList;
 
 /**
  * Created by PolyRocketMatt on 30/09/2020.
+ *
+ * Represents the parent of any source.
  */
 
 public class ParentNode extends Node {
 
+    /** A representation */
     private String parent = "parent";
 
+    /**
+     * Initialize a new ParentNode. NOTE: A ParentNode
+     * has no super-node, since it's the highest possible
+     * node in the AST already.
+     */
     public ParentNode() {
         super(null, new LinkedList<>());
     }

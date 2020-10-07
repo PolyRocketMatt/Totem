@@ -12,10 +12,17 @@ import com.github.polyrocketmatt.totem.utils.TypeUtils;
 
 /**
  * Created by PolyRocketMatt on 05/10/2020.
+ *
+ * Parser to parse variable declarations.
  */
 
 public class VariableDeclarationParser extends AbstractParser<VariableDeclarationStatementNode> implements Acceptor {
 
+    /**
+     * Initialize a new VariableDeclarationParser.
+     *
+     * @param parser the original parser
+     */
     public VariableDeclarationParser(TotemParser parser) {
         super(parser, parser.getStream());
     }

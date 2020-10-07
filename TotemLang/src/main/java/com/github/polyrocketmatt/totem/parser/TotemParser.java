@@ -183,6 +183,9 @@ public class TotemParser implements TotemPhase {
 
                             break;
                         case EXPRESSION_NODE:
+                            if (superNode instanceof VariableDeclarationStatementNode)
+                                ((VariableDeclarationStatementNode) superNode).setExpression((ExpressionNode) node);
+
                             superNode.add(node);
                             prediction = null;
 
@@ -250,7 +253,7 @@ public class TotemParser implements TotemPhase {
                                     ((VariableDeclarationStatementNode) superNode).setExpression((ExpressionNode) node);
 
                                 superNode.add(node);
-                                superNode = node;
+                                prediction = null;
 
                                 break;
                         }

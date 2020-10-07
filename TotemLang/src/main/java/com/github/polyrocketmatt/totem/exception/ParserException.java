@@ -11,6 +11,12 @@ import com.github.polyrocketmatt.totem.parser.TotemParser;
 
 public class ParserException extends TotemException {
 
+    /**
+     * Initialize a new ParserException.
+     *
+     * @param parser the parser that threw the error
+     * @param error the error
+     */
     public ParserException(TotemParser parser, String error) {
         super(Enums.Phase.SYNTACTIC_ANALYSIS, Enums.ColorProfile.ERROR, error);
 

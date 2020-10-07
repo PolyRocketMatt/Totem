@@ -8,7 +8,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/Enums.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/TotemPhase.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/TotemProcessor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/exception/InterpreterException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/exception/ParameterException.java">
           <value>
             <set />
           </value>
@@ -18,7 +38,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/exception/TokenizerException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/exception/TotemException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/exception/TypeException.java">
           <value>
             <set />
           </value>
@@ -144,6 +174,36 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/utils/TypeUtils.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/utils/representables/Representable.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/utils/representables/RepresentableObject.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/utils/representables/RepresentableParent.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/utils/representables/RepresentableValue.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/utils/representables/RepresentableVariable.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/utils/representables/ValueHolder.java">
           <value>
             <set />
           </value>

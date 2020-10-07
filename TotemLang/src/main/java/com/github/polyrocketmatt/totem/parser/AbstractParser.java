@@ -12,7 +12,9 @@ import com.github.polyrocketmatt.totem.node.Node;
 
 public abstract class AbstractParser<T extends Node> {
 
-
+    /**
+     * Enum that stores all types of nodes
+     */
     public enum NodeType {
         PARENT_NODE("parent"),
         OBJECT_NODE("object"),
