@@ -22,6 +22,9 @@ public class RepresentableObject extends Representable implements ValueHolder {
     /** The variables of the object */
     private List<RepresentableVariable> variables;
 
+    /** The functions of the object */
+    private List<RepresentableFunction> functions;
+
     /**
      * Initialize a new RepresentableObject.
      *
@@ -32,6 +35,7 @@ public class RepresentableObject extends Representable implements ValueHolder {
         this.name = name;
         this.parameters = parameters;
         this.variables = new ArrayList<>();
+        this.functions = new ArrayList<>();
     }
 
     /**
@@ -61,6 +65,15 @@ public class RepresentableObject extends Representable implements ValueHolder {
         return variables;
     }
 
+    /**
+     * Get the functions of the object.
+     *
+     * @return the functions
+     */
+    public List<RepresentableFunction> getFunctions() {
+        return functions;
+    }
+
     @Override
     public String represent(String indent) {
         StringBuilder builder = new StringBuilder();
@@ -68,20 +81,35 @@ public class RepresentableObject extends Representable implements ValueHolder {
         builder.append(indent).append("Object -> <").append(name).append(">").append("\n");
         builder.append(indent).append("    ---PARAMETERS---").append("\n");
 
-        for (Parameter parameter : parameters) {
-            builder.append(indent).append("        ").append(parameter.getType().toString()).append(": ").append(parameter.getName());
+        if (parameters.size() > 0)
+            for (Parameter parameter : parameters) {
+                builder.append(indent).append("        ").append(parameter.getType().toString()).append(": ").append(parameter.getName());
 
-            if (parameter.getValue() != null)
-                builder.append(": ").append(parameter.getValue().getValue().toString()).append("\n");
-            else
-                builder.append(": undefined\n");
-        }
+                if (parameter.getValue() != null)
+                    builder.append(": ").append(parameter.getValue().getValue().toString()).append("\n");
+                else
+                    builder.append(": undefined\n");
+            }
+        else
+            builder.append(indent + "        ").append("none");
 
         builder.append("\n");
         builder.append(indent).append("    ---VARIABLES---").append("\n");
 
-        for (RepresentableVariable variable : variables)
-            builder.append(variable.represent(indent + "        "));
+        if (variables.size() > 0)
+            for (RepresentableVariable variable : variables)
+                builder.append(variable.represent(indent + "        "));
+        else
+            builder.append(indent + "        ").append("none");
+
+        builder.append("\n");
+        builder.append(indent).append("    ---FUNCTIONS---").append("\n");
+
+        if (variables.size() > 0)
+            for (RepresentableFunction function : functions)
+                builder.append(function.represent(indent + "        "));
+        else
+            builder.append(indent + "        ").append("none");
 
         return builder.toString();
     }

@@ -5,9 +5,7 @@ import com.github.polyrocketmatt.totem.exception.InterpreterException;
 import com.github.polyrocketmatt.totem.exception.TotemException;
 import com.github.polyrocketmatt.totem.node.Node;
 import com.github.polyrocketmatt.totem.node.ParentNode;
-import com.github.polyrocketmatt.totem.utils.representables.RepresentableParent;
-import com.github.polyrocketmatt.totem.utils.representables.RepresentableValue;
-import com.github.polyrocketmatt.totem.utils.representables.ValueHolder;
+import com.github.polyrocketmatt.totem.utils.representables.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,6 +26,9 @@ public class TotemInterpreter implements TotemPhase {
     /** The representable parent */
     private RepresentableParent representableParent;
 
+    /** Current representable */
+    private Representable representable;
+
     /** A stack of computational results */
     private Stack<RepresentableValue> representableValues;
 
@@ -45,18 +46,19 @@ public class TotemInterpreter implements TotemPhase {
     public TotemInterpreter(ParentNode parent) {
         this.parent = parent;
         this.representableParent = new RepresentableParent();
+        this.representable = representableParent;
         this.representableValues = new Stack<>();
         this.holder = representableParent;
         this.holders = new ArrayList<>(Collections.singleton(holder));
     }
 
     /**
-     * Get the representable parent.
+     * Get the current representable
      *
-     * @return the representable parent
+     * @return the representable
      */
-    public RepresentableParent getRepresentableParent() {
-        return representableParent;
+    public Representable getRepresentable() {
+        return representable;
     }
 
     /**
@@ -78,24 +80,23 @@ public class TotemInterpreter implements TotemPhase {
     }
 
     /**
-     * Set the new value-holder.
+     * Get a representable entry based on the current
+     * representable and holder.
      *
-     * @param holder the value-holder
+     * @return the entry
      */
-    public void setHolder(ValueHolder holder) {
-        this.holder = holder;
-
-        if (!holders.contains(holder))
-            holders.add(holder);
+    public RepresentableEntry save() {
+        return new RepresentableEntry(representable, holder);
     }
 
     /**
-     * Get a list of all the holders.
+     * Restore a representable entry.
      *
-     * @return the holders
+     * @param entry the entry
      */
-    public List<ValueHolder> getHolders() {
-        return holders;
+    public void restore(RepresentableEntry entry) {
+        this.representable = entry.getRepresentable();
+        this.holder = entry.getHolder();
     }
 
     /**

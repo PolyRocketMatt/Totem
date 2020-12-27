@@ -158,6 +158,9 @@ public class TotemParser implements TotemPhase {
                 continue;
             }
             else if (token.getType() == TokenType.CBRACE) {
+                //  We should reset the super-node
+                superNode = superNode.getSuperNode();
+
                 blockLevel--;
                 stream.skip(1);
                 token = stream.read();

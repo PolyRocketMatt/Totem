@@ -6,6 +6,7 @@ import com.github.polyrocketmatt.totem.lexical.TokenType;
 import com.github.polyrocketmatt.totem.node.Node;
 import com.github.polyrocketmatt.totem.parser.AbstractParser;
 import com.github.polyrocketmatt.totem.utils.Parameter;
+import com.github.polyrocketmatt.totem.utils.representables.*;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -51,11 +52,31 @@ public class FunctionStatementNode extends Node {
 
     @Override
     public void visit(TotemInterpreter interpreter) throws InterpreterException {
+        RepresentableFunction function = new RepresentableFunction(returnTypes, name, parameters);
 
+        if (interpreter.getRepresentable() instanceof RepresentableParent)
+            ((RepresentableParent) interpreter.getRepresentable()).getFunctions().add(function);
+        else if (interpreter.getRepresentable() instanceof RepresentableObject)
+            ((RepresentableObject) interpreter.getRepresentable()).getFunctions().add(function);
+        RepresentableEntry entry = interpreter.save();
+
+        interpreter.restore(new RepresentableEntry(function, function));
+
+        for (Node subNode : getSubNodes())
+            subNode.visit(interpreter);
+
+        interpreter.restore(entry);
     }
 
     @Override
     public String string(String indent) {
-        return null;
+        StringBuilder builder = new StringBuilder();
+
+        builder.append(indent).append("NODE=FUNCTION(").append(name).append(")").append("\n");
+
+        for (Node subNode : getSubNodes())
+            builder.append(subNode.string(indent + "    "));
+
+        return builder.toString();
     }
 }

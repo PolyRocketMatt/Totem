@@ -1,5 +1,6 @@
 package com.github.polyrocketmatt.totem.utils.representables;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,12 +18,16 @@ public class RepresentableParent extends Representable implements ValueHolder {
     /** List of objects */
     private List<RepresentableObject> objects;
 
+    /** List of functions */
+    private List<RepresentableFunction> functions;
+
     /**
      * Initialize a new RepresentableParent.
      */
     public RepresentableParent() {
         this.variables = new ArrayList<>();
         this.objects = new ArrayList<>();
+        this.functions = new ArrayList<>();
     }
 
     /**
@@ -43,6 +48,15 @@ public class RepresentableParent extends Representable implements ValueHolder {
         return objects;
     }
 
+    /**
+     * Get the list of functions.
+     *
+     * @return the list of functions
+     */
+    public List<RepresentableFunction> getFunctions() {
+        return functions;
+    }
+
     @Override
     public String represent(String indent) {
         StringBuilder builder = new StringBuilder();
@@ -54,6 +68,9 @@ public class RepresentableParent extends Representable implements ValueHolder {
 
         for (RepresentableObject object : objects)
             builder.append(object.represent(indent + "    "));
+
+        for (RepresentableFunction function : functions)
+            builder.append(function.represent(indent + "    "));
 
         return builder.toString();
     }

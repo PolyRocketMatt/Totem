@@ -59,7 +59,7 @@ public class FunctionParser extends AbstractParser<FunctionStatementNode> implem
         token = getStream().read();
         List<TokenType> types = new ArrayList<>();
         while (token.getType() != TokenType.CPAREN) {
-            Token type = getStream().matchOrThrow(TokenType.BOOL, TokenType.FLOAT, TokenType.INT, TokenType.STRING);
+            Token type = getStream().matchOrThrow(TokenType.BOOL, TokenType.FLOAT, TokenType.INT, TokenType.STRING, TokenType.VOID);
 
             if (getStream().read().getType() == TokenType.COMMA)
                 getStream().skip(1);

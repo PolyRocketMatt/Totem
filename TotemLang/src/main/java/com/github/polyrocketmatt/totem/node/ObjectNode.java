@@ -4,7 +4,9 @@ import com.github.polyrocketmatt.totem.exception.InterpreterException;
 import com.github.polyrocketmatt.totem.interpreter.TotemInterpreter;
 import com.github.polyrocketmatt.totem.parser.AbstractParser;
 import com.github.polyrocketmatt.totem.utils.Parameter;
+import com.github.polyrocketmatt.totem.utils.representables.RepresentableEntry;
 import com.github.polyrocketmatt.totem.utils.representables.RepresentableObject;
+import com.github.polyrocketmatt.totem.utils.representables.RepresentableParent;
 import com.github.polyrocketmatt.totem.utils.representables.ValueHolder;
 
 import java.util.LinkedList;
@@ -47,22 +49,24 @@ public class ObjectNode extends Node {
     @Override
     public void visit(TotemInterpreter interpreter) throws InterpreterException {
         RepresentableObject object = new RepresentableObject(name, parameters);
-        ValueHolder previous = interpreter.getHolder();
 
-        interpreter.getRepresentableParent().getObjects().add(object);
-        interpreter.setHolder(object);
+        if (interpreter.getRepresentable() instanceof RepresentableParent)
+            ((RepresentableParent) interpreter.getRepresentable()).getObjects().add(object);
+        RepresentableEntry entry = interpreter.save();
+
+        interpreter.restore(new RepresentableEntry(object, object));
 
         for (Node subNode : getSubNodes())
             subNode.visit(interpreter);
 
-        interpreter.setHolder(previous);
+        interpreter.restore(entry);
     }
 
     @Override
     public String string(String indent) {
         StringBuilder builder = new StringBuilder();
 
-        builder.append(indent).append("NODE=OBJECT").append("\n");
+        builder.append(indent).append("NODE=OBJECT(").append(name).append(")").append("\n");
 
         for (Node subNode : getSubNodes())
             builder.append(subNode.string(indent + "    "));
