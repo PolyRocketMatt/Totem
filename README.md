@@ -8,7 +8,7 @@
 	<em>What is Totem?</em>
 </div>
 <div>
-Totem is a language that is transpiled to C. It is originally written in Java and will implement some interesting features I'd like to see implemented to various other languages. These features are purely subjective and Totem is the result. It is not an optimized language, design-wise might not make a lot of sense, but it's everything I personally feel is missing for most programming languages.
+Totem is a language that is interpreted (in Java). It is originally written in Java and will implement some interesting features I'd like to see implemented to various other languages. These features are purely subjective and Totem is the result. It is not an optimized language, design-wise might not make a lot of sense, but it's everything I personally feel is missing for most programming languages.
 
 Here is a list of some of the things Totem will be able to do:
 
