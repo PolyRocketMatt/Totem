@@ -21,6 +21,7 @@ public abstract class AbstractParser<T extends Node> {
 
         VARIABLE_DECLARATION_NODE("var_dec"),
         TUPLE_DECLARATION_NODE("tuple_dec"),
+        FUNCTION_NODE("func"),
 
         EXPRESSION_NODE("expression");
 

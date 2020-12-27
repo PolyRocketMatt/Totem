@@ -71,6 +71,7 @@ public class TotemTokenizer implements TotemPhase {
         add(TokenType.BOOL, "bool");
         add(TokenType.VAR, "var");
         add(TokenType.DEF, "def");
+        add(TokenType.TYPE, "type");
         add(TokenType.USE, "use");
         add(TokenType.NULL, "null");
         add(TokenType.RETURN, "return");
@@ -248,6 +249,11 @@ public class TotemTokenizer implements TotemPhase {
                             break;
                         case EQUAL:
                             stream.add(new Token(new Value<>("-=", TokenType.MINUS_EQUALS), TokenType.MINUS_EQUALS, token.getRow(), token.getColumn()));
+                            singleStream.skip(2);
+
+                            break;
+                        case GREATER_THAN:
+                            stream.add(new Token(new Value<>("->", TokenType.ARROW), TokenType.ARROW, token.getRow(), token.getColumn()));
                             singleStream.skip(2);
 
                             break;

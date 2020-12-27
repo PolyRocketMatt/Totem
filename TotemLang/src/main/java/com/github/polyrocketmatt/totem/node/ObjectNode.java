@@ -29,7 +29,7 @@ public class ObjectNode extends Node {
      *
      * @param superNode the super-node
      * @param nodes a list of sub-nodes
-     * @param name the name
+     * @param name the name of the object
      * @param parameters the parameters
      */
     public ObjectNode(Node superNode, LinkedList<Node> nodes, String name, List<Parameter> parameters) {

@@ -60,6 +60,7 @@ public enum TokenType {
     DOUBLE_AMPERSAND,   //  &&
     DOUBLE_PIPE,        //  ||
     DOUBLE_ASTERISK,    //  **
+    ARROW,              //  ->s
 
     //  Keywords
     FLOAT,              //  float
@@ -68,6 +69,7 @@ public enum TokenType {
     BOOL,               //  boolean
     VAR,                //  any type
     DEF,                //  def
+    TYPE,               //  type
     USE,                //  import
     NULL,               //  null
     RETURN,             //  return
