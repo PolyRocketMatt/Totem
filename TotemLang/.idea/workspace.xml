@@ -2,51 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84a44dcd-1924-417f-8c3d-f9c1bd69d6d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/lexical/TokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/lexical/TokenType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/lexical/TotemTokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/lexical/TotemTokenizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/ObjectNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/ObjectNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/statements/TupleDeclarationStatementNode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/AbstractParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/AbstractParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/TotemLang.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/TotemProcessor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/TotemProcessor$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/TotemProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/TotemProcessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/exception/InterpreterException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/exception/InterpreterException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/exception/ParameterException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/exception/ParameterException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/exception/ParserException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/exception/ParserException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/exception/TokenizerException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/exception/TokenizerException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/exception/TypeException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/interpreter/TotemInterpreter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/interpreter/TotemInterpreter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/lexical/TokenStream.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/lexical/TokenStream.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/lexical/TotemTokenizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/lexical/TotemTokenizer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/ObjectNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/ObjectNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/ParentNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/ParentNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/BinaryExpressionNode$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/BinaryExpressionNode$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/BinaryExpressionNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/BinaryExpressionNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/ComparisonExpressionNode$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/ComparisonExpressionNode$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/ComparisonExpressionNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/ComparisonExpressionNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/LiteralExpressionNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/LiteralExpressionNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/NullExpressionNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/NullExpressionNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/ParenthesizedExpressionNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/ParenthesizedExpressionNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/UnaryExpressionNode$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/UnaryExpressionNode$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/UnaryExpressionNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/expressions/UnaryExpressionNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/statements/VariableDeclarationStatementNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/statements/VariableDeclarationStatementNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/AbstractParser$NodeType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/AbstractParser$NodeType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/AbstractParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/AbstractParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/parsers/ExpressionParser$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/parsers/ExpressionParser$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/parsers/ExpressionParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/parsers/ExpressionParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/parsers/ObjectParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/parsers/ObjectParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/parsers/VariableDeclarationParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/parsers/VariableDeclarationParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/Prediction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/Prediction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/TypeUtils$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/TypeUtils$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/TypeUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/TypeUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/representables/Representable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/representables/Representable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/representables/RepresentableObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/representables/RepresentableObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/representables/RepresentableParent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/representables/RepresentableParent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/representables/RepresentableValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/representables/RepresentableValue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/representables/RepresentableVariable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/representables/RepresentableVariable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/TotemLang.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/parsers/FunctionParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/parsers/FunctionParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,12 +123,24 @@
       <workItem from="1602014105482" duration="2834000" />
       <workItem from="1602064894351" duration="5851000" />
       <workItem from="1602417004018" duration="34000" />
-      <workItem from="1609102314462" duration="1917000" />
+      <workItem from="1609102314462" duration="2327000" />
     </task>
+    <task id="LOCAL-00001" summary="Implement &quot;ARROW&quot; (-&gt;) TokenType and FunctionStatementNode">
+      <created>1609105633277</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1609105633277</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Implement &quot;ARROW&quot; (-&gt;) TokenType and FunctionStatementNode" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement &quot;ARROW&quot; (-&gt;) TokenType and FunctionStatementNode" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="179" key="#Project_Structure" timestamp="1601747412727">
