@@ -20,7 +20,7 @@ public class ParserException extends TotemException {
     public ParserException(TotemParser parser, String error) {
         super(Enums.Phase.SYNTACTIC_ANALYSIS, Enums.ColorProfile.ERROR, error);
 
-        parser.synchronize();
+        parser.sync();
     }
 
 }

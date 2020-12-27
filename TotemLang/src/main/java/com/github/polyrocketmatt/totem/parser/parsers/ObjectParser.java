@@ -74,6 +74,6 @@ public class ObjectParser extends AbstractParser<ObjectNode> implements Acceptor
 
     @Override
     public boolean accepts() {
-        return getStream().read().getType() == TokenType.DEF;
+        return getStream().read().getType() == TokenType.TYPE;
     }
 }

@@ -11,6 +11,7 @@ import com.github.polyrocketmatt.totem.node.Node;
 import com.github.polyrocketmatt.totem.node.ParentNode;
 import com.github.polyrocketmatt.totem.node.statements.VariableDeclarationStatementNode;
 import com.github.polyrocketmatt.totem.parser.parsers.ExpressionParser;
+import com.github.polyrocketmatt.totem.parser.parsers.FunctionParser;
 import com.github.polyrocketmatt.totem.parser.parsers.ObjectParser;
 import com.github.polyrocketmatt.totem.parser.parsers.VariableDeclarationParser;
 import com.github.polyrocketmatt.totem.utils.Prediction;
@@ -60,7 +61,8 @@ public class TotemParser implements TotemPhase {
 
         this.acceptors = new Acceptor[] {
                 new ObjectParser(this),
-                new VariableDeclarationParser(this)
+                new FunctionParser(this),
+                new VariableDeclarationParser(this),
         };
         this.parsers = new AbstractParser<?>[] {
                 new ExpressionParser(this)
@@ -190,13 +192,18 @@ public class TotemParser implements TotemPhase {
                             prediction = null;
 
                             break;
+                        case FUNCTION_NODE:
+                            superNode.add(node);
+                            superNode = node;
+
+                            break;
                         case VARIABLE_DECLARATION_NODE:
                         case TUPLE_DECLARATION_NODE:
                             superNode.add(node);
                             superNode = node;
 
                             if (stream.read().getType() == TokenType.EQUAL) {
-                                prediction = new Prediction(AbstractParser.NodeType.EXPRESSION_NODE);
+                                setPrediction(AbstractParser.NodeType.EXPRESSION_NODE);
                                 stream.skip(1);
                             }
 
@@ -222,12 +229,17 @@ public class TotemParser implements TotemPhase {
 
                         switch (node.getNodeType()) {
                             case OBJECT_NODE:
+                            case FUNCTION_NODE:
+                                superNode.add(node);
+                                superNode = node;
+
+                                break;
                             case VARIABLE_DECLARATION_NODE:
                                 superNode.add(node);
                                 superNode = node;
 
                                 if (stream.read().getType() == TokenType.EQUAL) {
-                                    prediction = new Prediction(AbstractParser.NodeType.EXPRESSION_NODE);
+                                    setPrediction(AbstractParser.NodeType.EXPRESSION_NODE);
                                     stream.skip(1);
                                 }
 
@@ -275,7 +287,7 @@ public class TotemParser implements TotemPhase {
      * has occurred somewhere in a previous expression to avoid
      * cascading/ghost errors.
      */
-    public void synchronize() {
+    public void sync() {
         Token token = stream.read();
 
         while (!stream.isAtEnd()) {
@@ -283,6 +295,7 @@ public class TotemParser implements TotemPhase {
                 return;
 
             switch (token.getType()) {
+                case TYPE:
                 case DEF:
                 case FOR:
                 case WHILE:

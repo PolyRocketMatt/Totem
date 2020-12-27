@@ -37,7 +37,7 @@ public class VariableDeclarationParser extends AbstractParser<VariableDeclaratio
 
     @Override
     public NodeType[] getAcceptedParents() {
-        return new NodeType[] { NodeType.PARENT_NODE, NodeType.OBJECT_NODE };
+        return new NodeType[] { NodeType.PARENT_NODE, NodeType.OBJECT_NODE, NodeType.FUNCTION_NODE };
     }
 
     @Override

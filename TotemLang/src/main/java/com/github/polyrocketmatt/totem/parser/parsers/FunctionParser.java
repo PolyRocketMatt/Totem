@@ -54,6 +54,7 @@ public class FunctionParser extends AbstractParser<FunctionStatementNode> implem
 
         getStream().skip(1);    //  Skip ")"
         getStream().matchOrThrow(TokenType.ARROW);
+        getStream().matchOrThrow(TokenType.OPAREN);
 
         token = getStream().read();
         List<TokenType> types = new ArrayList<>();
@@ -89,7 +90,7 @@ public class FunctionParser extends AbstractParser<FunctionStatementNode> implem
 
     @Override
     public boolean accepts() {
-        return getStream().read().getType() == TokenType.TYPE;
+        return getStream().read().getType() == TokenType.DEF;
     }
 
 }

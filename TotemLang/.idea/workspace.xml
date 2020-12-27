@@ -3,7 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="84a44dcd-1924-417f-8c3d-f9c1bd69d6d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/exception/ParserException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/exception/ParserException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/TotemParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/TotemParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/parsers/FunctionParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/parsers/FunctionParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/parsers/ObjectParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/parsers/ObjectParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/parsers/VariableDeclarationParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/parsers/VariableDeclarationParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/exception/ParserException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/exception/ParserException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/lexical/TokenType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/lexical/TokenType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/lexical/TotemTokenizer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/lexical/TotemTokenizer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/lexical/TotemTokenizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/lexical/TotemTokenizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/node/statements/TupleDeclarationStatementNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/AbstractParser$NodeType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/AbstractParser$NodeType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/AbstractParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/AbstractParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/TotemParser$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/TotemParser$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/TotemParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/TotemParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/parsers/ObjectParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/parser/parsers/ObjectParser.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +137,7 @@
       <workItem from="1602014105482" duration="2834000" />
       <workItem from="1602064894351" duration="5851000" />
       <workItem from="1602417004018" duration="34000" />
-      <workItem from="1609102314462" duration="2327000" />
+      <workItem from="1609102314462" duration="3191000" />
     </task>
     <task id="LOCAL-00001" summary="Implement &quot;ARROW&quot; (-&gt;) TokenType and FunctionStatementNode">
       <created>1609105633277</created>
@@ -132,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609105633277</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Implement the parsing of functions">
+      <created>1609106035373</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609106035373</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,7 +161,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implement &quot;ARROW&quot; (-&gt;) TokenType and FunctionStatementNode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement &quot;ARROW&quot; (-&gt;) TokenType and FunctionStatementNode" />
+    <MESSAGE value="Implement the parsing of functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement the parsing of functions" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="179" key="#Project_Structure" timestamp="1601747412727">
@@ -167,46 +189,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601683982578" />
-    <state x="585" y="115" key="CommitChangelistDialog2" timestamp="1609105632453">
+    <state x="585" y="115" key="CommitChangelistDialog2" timestamp="1609106034928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1609105632453" />
+    <state x="585" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1609106034928" />
     <state x="1043" y="373" key="FileChooserDialogImpl" timestamp="1601902193997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1043" y="373" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601902193997" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1609104535623">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1609106883889">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609104535623" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1609104535622">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609106883889" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1609106883889">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609104535622" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1609104535622">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609106883889" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1609106883889">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609104535622" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1609104535623">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609106883889" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1609106883889">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609104535623" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1602080421625">
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609106883889" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1609106879158">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602080421625" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1602080421625">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609106879158" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1609106879157">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602080421625" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1602080421625">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609106879157" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1609106879157">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602080421625" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1602080421625">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609106879157" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1609106879157">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602080421625" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609106879157" />
     <state x="461" y="163" key="SettingsEditor" timestamp="1601735676566">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -219,10 +241,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="342" y="216" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1602417036483" />
+    <state x="666" y="140" key="refactoring.ChangeSignatureDialog" timestamp="1609106555318">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="666" y="140" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609106555318" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1601683177673">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1601683177673" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/TotemParser.java</url>
+          <line>139</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/parsers/FunctionParser.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TotemLang$Runtime.ic" NAME="Runtime Coverage Results" MODIFIED="1601908256634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
