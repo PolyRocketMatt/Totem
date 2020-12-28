@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84a44dcd-1924-417f-8c3d-f9c1bd69d6d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/statements/FunctionStatementNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/statements/FunctionStatementNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/AbstractParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/AbstractParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/TotemParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/TotemParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/parsers/ExpressionParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/parsers/ExpressionParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/parsers/FunctionParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/parsers/FunctionParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/parsers/ObjectParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/parsers/ObjectParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/utils/representables/RepresentableObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/utils/representables/RepresentableObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/representables/RepresentableObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/polyrocketmatt/totem/utils/representables/RepresentableObject.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +124,7 @@
       <workItem from="1602064894351" duration="5851000" />
       <workItem from="1602417004018" duration="34000" />
       <workItem from="1609102314462" duration="5772000" />
-      <workItem from="1609167453502" duration="1600000" />
+      <workItem from="1609167453502" duration="1854000" />
     </task>
     <task id="LOCAL-00001" summary="Implement &quot;ARROW&quot; (-&gt;) TokenType and FunctionStatementNode">
       <created>1609105633277</created>
@@ -161,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609109460845</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Implement Return-statements">
+      <created>1609169122661</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1609169122661</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,7 +172,8 @@
     <MESSAGE value="Implement the parsing of functions" />
     <MESSAGE value="Implement synchronized function parsing" />
     <MESSAGE value="Implement Representable Entries (flaky)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement Representable Entries (flaky)" />
+    <MESSAGE value="Implement Return-statements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement Return-statements" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="179" key="#Project_Structure" timestamp="1601747412727">
@@ -199,46 +200,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609169097816" />
-    <state x="585" y="115" key="CommitChangelistDialog2" timestamp="1609109460316">
+    <state x="585" y="115" key="CommitChangelistDialog2" timestamp="1609169451334">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1609109460316" />
+    <state x="585" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1609169451334" />
     <state x="1043" y="373" key="FileChooserDialogImpl" timestamp="1601902193997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1043" y="373" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601902193997" />
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1609167526282">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1609169423201">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609167526282" />
-    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1609167526282">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609169423201" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1609169423201">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609167526282" />
-    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1609167526282">
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609169423201" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1609169423201">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609167526282" />
-    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1609167526282">
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609169423201" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1609169423201">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609167526282" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1609167526283">
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609169423201" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1609169423336">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609167526283" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1609167526282">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609169423336" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1609169423336">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609167526282" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1609167526282">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609169423336" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1609169423336">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609167526282" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1609167526282">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609169423336" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1609169423336">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609167526282" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609169423336" />
     <state x="461" y="163" key="SettingsEditor" timestamp="1601735676566">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

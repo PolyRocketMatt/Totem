@@ -112,6 +112,8 @@ public class TotemParser implements TotemPhase {
     @Override
     public void process() throws TotemException {
         parse();
+
+        System.out.println("DONE");
     }
 
     /**
