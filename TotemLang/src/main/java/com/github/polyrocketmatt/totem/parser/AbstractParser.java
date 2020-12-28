@@ -17,13 +17,15 @@ public abstract class AbstractParser<T extends Node> {
      */
     public enum NodeType {
         PARENT_NODE("parent"),
-        OBJECT_NODE("object"),
+        OBJECT_NODE("obj"),
 
         VARIABLE_DECLARATION_NODE("var_dec"),
         TUPLE_DECLARATION_NODE("tuple_dec"),
         FUNCTION_NODE("func"),
+        FUNCTION_INVOKE_NODE("func_inv"),
+        RETURN_NODE("ret"),
 
-        EXPRESSION_NODE("expression");
+        EXPRESSION_NODE("expr");
 
         private String name;
 

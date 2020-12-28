@@ -70,7 +70,7 @@ public class FunctionParser extends AbstractParser<FunctionStatementNode> implem
 
         getStream().skip(1);    //  Skip ")"
 
-        return new FunctionStatementNode(superNode, new LinkedList<>(), types, identifier.getValue().getValue().toString(), parameters);
+        return new FunctionStatementNode(superNode, types, identifier.getValue().getValue().toString(), parameters);
     }
 
     @Override
@@ -85,7 +85,7 @@ public class FunctionParser extends AbstractParser<FunctionStatementNode> implem
 
     @Override
     public String getName() {
-        return "function";
+        return "func";
     }
 
     @Override

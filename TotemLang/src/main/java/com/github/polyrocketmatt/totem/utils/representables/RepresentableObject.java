@@ -105,7 +105,7 @@ public class RepresentableObject extends Representable implements ValueHolder {
         builder.append("\n");
         builder.append(indent).append("    ---FUNCTIONS---").append("\n");
 
-        if (variables.size() > 0)
+        if (functions.size() > 0)
             for (RepresentableFunction function : functions)
                 builder.append(function.represent(indent + "        "));
         else

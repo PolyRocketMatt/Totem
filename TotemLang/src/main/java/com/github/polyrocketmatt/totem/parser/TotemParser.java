@@ -9,11 +9,9 @@ import com.github.polyrocketmatt.totem.lexical.TokenType;
 import com.github.polyrocketmatt.totem.node.ExpressionNode;
 import com.github.polyrocketmatt.totem.node.Node;
 import com.github.polyrocketmatt.totem.node.ParentNode;
+import com.github.polyrocketmatt.totem.node.statements.ReturnStatementNode;
 import com.github.polyrocketmatt.totem.node.statements.VariableDeclarationStatementNode;
-import com.github.polyrocketmatt.totem.parser.parsers.ExpressionParser;
-import com.github.polyrocketmatt.totem.parser.parsers.FunctionParser;
-import com.github.polyrocketmatt.totem.parser.parsers.ObjectParser;
-import com.github.polyrocketmatt.totem.parser.parsers.VariableDeclarationParser;
+import com.github.polyrocketmatt.totem.parser.parsers.*;
 import com.github.polyrocketmatt.totem.utils.Prediction;
 
 import java.text.MessageFormat;
@@ -62,6 +60,7 @@ public class TotemParser implements TotemPhase {
         this.acceptors = new Acceptor[] {
                 new ObjectParser(this),
                 new FunctionParser(this),
+                new ReturnParser(this),
                 new VariableDeclarationParser(this),
         };
         this.parsers = new AbstractParser<?>[] {
@@ -190,6 +189,8 @@ public class TotemParser implements TotemPhase {
                         case EXPRESSION_NODE:
                             if (superNode instanceof VariableDeclarationStatementNode)
                                 ((VariableDeclarationStatementNode) superNode).setExpression((ExpressionNode) node);
+                            else if (superNode instanceof ReturnStatementNode)
+                                ((ReturnStatementNode) superNode).setExpression((ExpressionNode) node);
 
                             superNode.add(node);
                             prediction = null;
@@ -198,6 +199,13 @@ public class TotemParser implements TotemPhase {
                         case FUNCTION_NODE:
                             superNode.add(node);
                             superNode = node;
+
+                            break;
+                        case RETURN_NODE:
+                            superNode.add(node);
+                            superNode = node;
+
+                            setPrediction(AbstractParser.NodeType.EXPRESSION_NODE);
 
                             break;
                         case VARIABLE_DECLARATION_NODE:
@@ -237,7 +245,15 @@ public class TotemParser implements TotemPhase {
                                 superNode = node;
 
                                 break;
+                            case RETURN_NODE:
+                                superNode.add(node);
+                                superNode = node;
+
+                                setPrediction(AbstractParser.NodeType.EXPRESSION_NODE);
+
+                                break;
                             case VARIABLE_DECLARATION_NODE:
+                            case TUPLE_DECLARATION_NODE:
                                 superNode.add(node);
                                 superNode = node;
 
@@ -266,6 +282,8 @@ public class TotemParser implements TotemPhase {
                             case EXPRESSION_NODE:
                                 if (superNode instanceof VariableDeclarationStatementNode)
                                     ((VariableDeclarationStatementNode) superNode).setExpression((ExpressionNode) node);
+                                else if (superNode instanceof ReturnStatementNode)
+                                    ((ReturnStatementNode) superNode).setExpression((ExpressionNode) node);
 
                                 superNode.add(node);
                                 prediction = null;

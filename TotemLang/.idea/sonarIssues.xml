@@ -133,7 +133,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/statements/FunctionInvocationStatementNode.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/statements/FunctionStatementNode.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/node/statements/ReturnStatementNode.java">
           <value>
             <set />
           </value>
@@ -163,12 +173,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/parsers/FunctionInvocationParser.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/parsers/FunctionParser.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/parsers/ObjectParser.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/github/polyrocketmatt/totem/parser/parsers/ReturnParser.java">
           <value>
             <set />
           </value>

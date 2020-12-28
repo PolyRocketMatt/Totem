@@ -37,8 +37,8 @@ public class FunctionStatementNode extends Node {
      * @param name the name of the function
      * @param parameters the parameters
      */
-    public FunctionStatementNode(Node superNode, LinkedList<Node> nodes, List<TokenType> returnTypes, String name, List<Parameter> parameters) {
-        super(superNode, nodes);
+    public FunctionStatementNode(Node superNode, List<TokenType> returnTypes, String name, List<Parameter> parameters) {
+        super(superNode, new LinkedList<>());
 
         this.returnTypes = returnTypes;
         this.name = name;

@@ -46,7 +46,7 @@ public class ExpressionParser extends AbstractParser<ExpressionNode> {
 
     @Override
     public String getName() {
-        return "expression";
+        return "expr";
     }
 
     private ExpressionNode parseExpression() throws ParserException {

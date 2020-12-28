@@ -69,7 +69,7 @@ public class ObjectParser extends AbstractParser<ObjectNode> implements Acceptor
 
     @Override
     public String getName() {
-        return "object";
+        return "obj";
     }
 
     @Override
